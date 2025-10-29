@@ -311,3 +311,46 @@ body {
 .readmore:hover {
   background: #b71c1c;
 }
+
+/* ===================== Featured Highlights ===================== */
+.highlights {
+  background: #fff3e0;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid #f0c078;
+}
+
+.highlight-title {
+  font-weight: 700;
+  color: #d32f2f;
+  margin-left: 15px;
+  flex-shrink: 0;
+}
+
+.highlight-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+  margin-left: 10px;
+}
+
+#highlight-list {
+  display: inline-block;
+  animation: scrollHighlights 20s linear infinite;
+  padding: 0;
+  margin: 0;
+}
+
+#highlight-list li {
+  display: inline;
+  margin-right: 60px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+@keyframes scrollHighlights {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
