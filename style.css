@@ -354,3 +354,25 @@ body {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
+/* Typing effect style */
+#typing-text {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1.4rem;
+  border-right: 2px solid #d32f2f;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
