@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const res = await fetch(sheetURL);
     const posts = await res.json();
+    // Auto refresh every 5 minutes (300000 milliseconds)
+setInterval(loadPosts, 300000);
     postContainer.innerHTML = "";
 
     if (!posts || posts.length === 0) {
