@@ -6,7 +6,6 @@ const HIGHLIGHTS_SHEET = "Highlights";
 const typingTexts = [
   "ऑनलाईन माहिती हक्काची फक्त महाराष्ट्र सरळ सेवा भरती वर उपलब्ध"
 ];
-
 let typingIndex = 0;
 let charIndex = 0;
 const typingSpeed = 120;
