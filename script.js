@@ -5,11 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "सरकारी योजना, नोकरी भरती, शेतकरी अपडेट्स, PDF डाउनलोड",
     "Maharashtra Saral Seva Bharti - Official Info Hub"
   ];
-
   const typingElement = document.getElementById("typing-text");
   let typingIndex = 0;
   let charIndex = 0;
-
   function typeText() {
     if (!typingElement) return;
     if (charIndex < typingTexts[typingIndex].length) {
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(eraseText, 1800);
     }
   }
-
   function eraseText() {
     if (charIndex > 0) {
       typingElement.textContent = typingTexts[typingIndex].substring(0, charIndex - 1);
@@ -35,14 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
   typeText();
 });
 
-
 // =================== Auto Fetch Latest Posts ===================
 document.addEventListener("DOMContentLoaded", async () => {
-  const sheetURL = "https://opensheet.elk.sh/1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE/Sheet1";
-  const sheetURL =
-    "https://opensheet.elk.sh/1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE/Sheet1";
+  const sheetURL = "https://opensheet.elk.sh/1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE/MSSB_Post";
+  const sheetURL = "https://opensheet.elk.sh/1x-OsCTRVvcR6EN4Le-IdJ4O7-jIOg_CDMgDiCXE8zgc/Highlights";
+    "https://opensheet.elk.sh/1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE/MSSB_Post";
   const postContainer = document.querySelector(".latest-posts .posts-grid");
-
   if (!postContainer) {
     console.error("❌ posts-grid section सापडली नाही!");
     return;
@@ -101,7 +96,6 @@ setInterval(loadPosts, 300000);
 
   // पहिल्यांदा पेज लोड झाल्यावर
   await loadPosts();
-
     posts.forEach((post, i) => {
       const article = document.createElement("article");
       article.classList.add("post");
@@ -130,7 +124,6 @@ setInterval(loadPosts, 300000);
   // प्रत्येक 5 मिनिटांनी आपोआप नवीन डेटा लोड होईल
   setInterval(loadPosts, 300000);
 });
-
 
 // =============== Category Filter ===============
 document.addEventListener("click", (e) => {
