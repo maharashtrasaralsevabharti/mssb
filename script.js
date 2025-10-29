@@ -38,7 +38,30 @@ document.addEventListener("DOMContentLoaded", typeText);
 const sheetURL = "https://opensheet.elk.sh/1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE/Sheet1";
 const postContainer = document.querySelector(".latest-posts .posts-grid");
 
-async function loadPosts() {
+async function loadPosts()
+  // =============== Category Filter ===============
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("filter-btn")) {
+    const selected = e.target.getAttribute("data-category");
+    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+    e.target.classList.add("active");
+    filterPosts(selected);
+  }
+});
+
+function filterPosts(category) {
+  const posts = document.querySelectorAll(".latest-posts .post");
+  posts.forEach(post => {
+    const postCategory = post.querySelector("p").textContent || "";
+    if (category === "सर्व" || postCategory.includes(category)) {
+      post.style.display = "block";
+      post.style.animation = `fadeInUp 0.5s ease forwards`;
+    } else {
+      post.style.display = "none";
+    }
+  });
+}
+{
   try {
     const res = await fetch(sheetURL);
     const posts = await res.json();
