@@ -95,3 +95,6 @@ function filterPosts(category) {
 }
 
 document.addEventListener("DOMContentLoaded", loadPosts);
+<script src="script.js"></script>
+</body>
+</html>
