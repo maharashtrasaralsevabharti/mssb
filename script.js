@@ -38,8 +38,49 @@ document.addEventListener("DOMContentLoaded", typeText);
 const sheetURL = "https://opensheet.elk.sh/1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE/Sheet1";
 const postContainer = document.querySelector(".latest-posts .posts-grid");
 
-async function loadPosts()
-  // =============== Category Filter ===============
+async function loadPosts() {
+  try {
+    const res = await fetch(sheetURL);
+    const posts = await res.json();
+    postContainer.innerHTML = "";
+
+    if (posts.length === 0) {
+      postContainer.innerHTML = "<p>⚠️ सध्या कोणतीही पोस्ट उपलब्ध नाही.</p>";
+      return;
+    }
+
+    posts.forEach((post, i) => {
+      const article = document.createElement("article");
+      article.classList.add("post");
+      article.style.opacity = "0";
+      article.innerHTML = `
+        <img src="${post.Image}" alt="${post.Title}">
+        <div class="post-content">
+          <h3>${post.Title}</h3>
+          <p>${post.Category || ""}</p>
+          <p>${post.Description}</p>
+          <a class="readmore" href="${post.Link}" target="_blank">अधिक वाचा</a>
+        </div>
+      `;
+      postContainer.appendChild(article);
+
+      // Fade-in Animation
+      setTimeout(() => {
+        article.style.opacity = "1";
+        article.style.animation = `fadeInUp 0.7s ease forwards`;
+      }, i * 150);
+    });
+
+  } catch (err) {
+    console.error("Error loading posts:", err);
+    postContainer.innerHTML = "<p>⚠️ डेटा मिळवण्यात त्रुटी आली. कृपया नंतर पुन्हा प्रयत्न करा.</p>";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadPosts);
+
+
+// =============== Category Filter ===============
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("filter-btn")) {
     const selected = e.target.getAttribute("data-category");
@@ -52,7 +93,7 @@ document.addEventListener("click", (e) => {
 function filterPosts(category) {
   const posts = document.querySelectorAll(".latest-posts .post");
   posts.forEach(post => {
-    const postCategory = post.querySelector("p").textContent || "";
+    const postCategory = post.querySelector(".post-content p").textContent || "";
     if (category === "सर्व" || postCategory.includes(category)) {
       post.style.display = "block";
       post.style.animation = `fadeInUp 0.5s ease forwards`;
@@ -61,40 +102,3 @@ function filterPosts(category) {
     }
   });
 }
-{
-  try {
-    const res = await fetch(sheetURL);
-    const posts = await res.json();
-    postContainer.innerHTML = "";
-
-    posts.forEach((post, i) => {
-      const article = document.createElement("article");
-      article.classList.add("post");
-      article.style.opacity = "0";
-      article.innerHTML = `
-        <img src="${post.Image}" alt="${post.Title}">
-        <div class="post-content">
-          <h3>${post.Title}</h3>
-          <p>${post.Description}</p>
-          <a class="readmore" href="${post.Link}" target="_blank">अधिक वाचा</a>
-        </div>
-      `;
-      postContainer.appendChild(article);
-
-      // Smooth fade-in animation
-      setTimeout(() => {
-        article.style.opacity = "1";
-        article.style.animation = `fadeInUp 0.7s ease forwards`;
-      }, i * 200);
-    });
-
-  } catch (err) {
-    console.error("Error loading posts:", err);
-    postContainer.innerHTML = "<p>⚠️ पोस्ट लोड करण्यात समस्या आली.</p>";
-  }
-}
-
-document.addEventListener("DOMContentLoaded", loadPosts);
-<script src="script.js"></script>
-</body>
-</html>
