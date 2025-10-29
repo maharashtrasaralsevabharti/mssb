@@ -1,104 +1,54 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>महाराष्ट्र सरळ सेवा भरती</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<script>
-const texts = [
-  "सार्वजनिक भरती माहिती",
-  "शैक्षणिक अपडेट्स",
-  "शेतकरी योजना",
-  "सरकारी योजना",
-  "Job & Study Tips"
-];
-
-let count = 0;
-let index = 0;
-let currentText = '';
-let letter = '';
-
-function type() {
-  if (count === texts.length) {
-    count = 0;
-  }
-  currentText = texts[count];
-  letter = currentText.slice(0, ++index);
-
-  document.querySelector('.typing-text').textContent = letter;
-  if (letter.length === currentText.length) {
-    count++;
-    index = 0;
-    setTimeout(type, 1500);
-  } else {
-    setTimeout(type, 100);
-  }
-}
-
-type();
-</script>
 <body>
-
-  <!-- Header Section -->
   <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo">
-      <h1>महाराष्ट्र सरळ सेवा भरती</h1>
-    </div>
+    <img src="images/logo.png" alt="Logo">
+    <h1>महाराष्ट्र सरळ सेवा भरती</h1>
     <nav>
-      <ul>
-        <li><a href="index.html" class="active">मुख्यपृष्ठ</a></li>
-        <li><a href="pages/nokari.html">नोकरी भरती</a></li>
-        <li><a href="pages/yojana.html">सरकारी योजना</a></li>
-        <li><a href="pages/shetkari.html">शेतकरी</a></li>
-        <li><a href="pages/shasan.html">शासन निर्णय</a></li>
-        <li><a href="pages/pdf.html">डाउनलोड PDF</a></li>
-      </ul>
+      <a href="#">मुख्यपृष्ठ</a>
+      <a href="#">नोकरी भरती</a>
+      <a href="#">सरकारी योजना</a>
+      <a href="#">शेतकरी</a>
+      <a href="#">शासन निर्णय</a>
+      <a href="#">डाउनलोड PDF</a>
     </nav>
   </header>
 
-  <!-- Typing Animation -->
-  <section class="typing-section">
-    <h2><span id="typing-text"></span></h2>
+  <section class="typing">
+    <h2 id="changing-text">महाराष्ट्र सरळ सेवा भरती</h2>
   </section>
 
-  <!-- Latest / Popular Posts -->
-  <section class="posts-section">
-    <h3>🔸 Popular Posts</h3>
-    <div class="posts-grid">
-      <div class="post">
-        <img src="images/job.jpg" alt="पोलीस भरती">
-        <h4>पोलीस भरती 2025</h4>
-      </div>
-      <div class="post">
-        <img src="images/yojana.jpg" alt="सरकारी योजना">
-        <h4>MPSC वेळापत्रक</h4>
-      </div>
-      <div class="post">
-        <img src="images/farmer.jpg" alt="शेतकरी योजना">
-        <h4>शेतकरी सौर पंप योजना</h4>
-      </div>
-      <div class="post">
-        <img src="images/pdf.jpg" alt="डाउनलोड PDF">
-        <h4>Download PDF फाईल्स</h4>
-      </div>
+  <section class="posts">
+    <h3>Popular Posts</h3>
+    <div class="post-grid">
+      <div class="post"><img src="images/police.jpg" alt=""><p>पोलीस भरती 2025</p></div>
+      <div class="post"><img src="images/mpsc.jpg" alt=""><p>MPSC वेळापत्रक</p></div>
+      <div class="post"><img src="images/solar.jpg" alt=""><p>शेतकरी सौर पंप योजना</p></div>
+      <div class="post"><img src="images/pdf.jpg" alt=""><p>Download PDF फाईल्स</p></div>
     </div>
   </section>
 
-  <!-- Social Media Links -->
-  <section class="social-section">
-    <a href="https://youtube.com/@saralsevabhartiupdate" target="_blank" class="social-icon yt">YouTube</a>
-    <a href="#" target="_blank" class="social-icon fb">Facebook</a>
-    <a href="#" target="_blank" class="social-icon ig">Instagram</a>
+  <section class="social">
+    <a href="#" class="youtube">YouTube</a>
+    <a href="#" class="facebook">Facebook</a>
+    <a href="#" class="instagram">Instagram</a>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Maharashtra Saral Seva Bharti | All Rights Reserved</p>
-  </footer>
+  <footer>© 2025 Maharashtra Saral Seva Bharti | All Rights Reserved</footer>
 
+  <script>
+    const texts = ["महाराष्ट्र सरळ सेवा भरती", "सरकारी योजना", "नोकरी भरती", "शेतकरी अपडेट्स"];
+    let i = 0;
+    setInterval(() => {
+      document.getElementById("changing-text").textContent = texts[i];
+      i = (i + 1) % texts.length;
+    }, 2000);
+  </script>
 </body>
 </html>
