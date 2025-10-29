@@ -1,69 +1,90 @@
+/* Maharashtra Saral Seva Bharti - Light Theme Modern Design */
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #ffffff;
+  padding: 0;
+  background-color: #fafafa;
   color: #222;
 }
 
+/* Header */
 header {
+  background: #ffffff;
+  color: #222;
   text-align: center;
-  padding: 10px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 header img {
-  width: 160px;
-  height: auto;
+  height: 70px;
+  margin-bottom: 5px;
 }
 
-h1 {
-  color: #c62828;
-  font-size: 28px;
-  margin: 10px 0;
+header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+/* Typing animation */
+.typing-text {
+  color: #e65100;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 5px;
+  height: 25px;
+}
+
+/* Navigation bar */
+nav {
+  background: #ffcc80;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav a {
+  color: #000;
   text-decoration: none;
-  color: #111;
-  margin: 0 15px;
-  font-weight: bold;
-  font-size: 16px;
+  padding: 12px 20px;
+  font-weight: 500;
 }
 
 nav a:hover {
-  color: #c62828;
+  background: #ffb74d;
+  color: #000;
+  transition: 0.3s;
 }
 
-.typing {
-  text-align: center;
-  padding: 10px;
-  background-color: #fff5f5;
+/* Latest Posts Section */
+.latest-posts {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 15px;
 }
 
-#changing-text {
-  color: #d32f2f;
-  font-weight: bold;
+.latest-posts h2 {
+  font-size: 22px;
+  border-left: 5px solid #ff9800;
+  padding-left: 10px;
+  margin-bottom: 15px;
 }
 
-.posts {
-  padding: 20px;
-  text-align: center;
-}
-
-.post-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
 }
 
 .post {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 230px;
-  transition: transform 0.3s;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .post:hover {
@@ -72,34 +93,48 @@ nav a:hover {
 
 .post img {
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  height: 160px;
+  object-fit: cover;
 }
 
-.social {
-  text-align: center;
-  margin: 30px 0;
+.post-content {
+  padding: 10px 15px 15px;
 }
 
-.social a {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
+.post-content h3 {
+  font-size: 18px;
+  margin: 5px 0;
 }
 
-.youtube { background: #ff0000; }
-.facebook { background: #3b5998; }
-.instagram {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-footer {
-  background: #f5f5f5;
-  text-align: center;
-  padding: 10px;
-  color: #555;
+.post-content p {
   font-size: 14px;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #fff3e0;
+  color: #222;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  font-size: 14px;
+  border-top: 1px solid #ffe0b2;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  font-size: 22px;
+  text-decoration: none;
+  color: #ff6f00;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #e65100;
 }
