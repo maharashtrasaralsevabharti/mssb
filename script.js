@@ -2,16 +2,11 @@
 const SHEET_ID = "1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE";
 const POSTS_SHEET = "MSSB_Post";
 const HIGHLIGHTS_SHEET = "Highlights";
-
 // ✅ Typing Animation Texts
 const typingTexts = [
-  "महाराष्ट्र सरळ सेवा भरती",
-  "सरकारी योजना",
-  "नोकरी भरती",
-  "शेतकरी अपडेट्स"
+  "ऑनलाईन माहिती हक्काची फक्त महाराष्ट्र सरळ सेवा भरती वर उपलब्ध"
 ];
 
-// ✅ Typing Effect Function
 let typingIndex = 0;
 let charIndex = 0;
 const typingSpeed = 120;
@@ -28,6 +23,20 @@ function typeEffect() {
     setTimeout(typeEffect, typingSpeed);
   } else {
     setTimeout(eraseEffect, delayBetween);
+  }
+}
+
+function eraseEffect() {
+  const typingElement = document.getElementById("typing-text");
+  if (!typingElement) return;
+
+  if (charIndex > 0) {
+    typingElement.textContent = typingTexts[typingIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, eraseSpeed);
+  } else {
+    typingIndex = (typingIndex + 1) % typingTexts.length;
+    setTimeout(typeEffect, typingSpeed);
   }
 }
 
