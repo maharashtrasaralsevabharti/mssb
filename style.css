@@ -1,180 +1,105 @@
-/* ===== Maharashtra Saral Seva Bharti Website CSS ===== */
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", "Noto Sans Devanagari", sans-serif;
-}
-
-/* Body */
 body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
   background-color: #ffffff;
   color: #222;
-  line-height: 1.6;
 }
 
-/* Header */
 header {
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-}
-
-header .logo img {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-}
-
-header .logo h1 {
-  font-size: 1.6rem;
-  color: #c62828;
-  font-weight: 700;
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: #f8f8f8;
-  padding: 10px 0;
-}
-
-nav ul li {
-  margin: 5px 10px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  background-color: #c62828;
-  color: #fff;
-}
-
-/* Typing Section */
-.typing-section {
   text-align: center;
-  padding: 20px;
-  background: #fff5f5;
-  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.typing-section h2 {
-  font-size: 1.4rem;
+header img {
+  width: 160px;
+  height: auto;
+}
+
+h1 {
+  color: #c62828;
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
   color: #c62828;
 }
 
-/* Posts Section */
-.posts-section {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 0 15px;
+.typing {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff5f5;
 }
 
-.posts-section h3 {
-  font-size: 1.4rem;
-  color: #222;
-  margin-bottom: 15px;
+#changing-text {
+  color: #d32f2f;
+  font-weight: bold;
 }
 
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.posts {
+  padding: 20px;
+  text-align: center;
+}
+
+.post-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
 .post {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
   background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 230px;
+  transition: transform 0.3s;
 }
 
 .post:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 .post img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
-.post h4 {
-  padding: 10px;
-  text-align: center;
-  color: #333;
-}
-
-/* Social Section */
-.social-section {
+.social {
   text-align: center;
   margin: 30px 0;
 }
 
-.social-icon {
+.social a {
   display: inline-block;
   margin: 0 10px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 25px;
-  color: #fff;
-  font-weight: 500;
+  font-weight: bold;
+  color: white;
   text-decoration: none;
 }
 
-.social-icon.yt {
-  background: #ff0000;
+.youtube { background: #ff0000; }
+.facebook { background: #3b5998; }
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-.social-icon.fb {
-  background: #3b5998;
-}
-
-.social-icon.ig {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-}
-
-/* Footer */
 footer {
+  background: #f5f5f5;
   text-align: center;
-  background: #f8f8f8;
-  color: #444;
-  padding: 15px 0;
-  margin-top: 20px;
-  border-top: 1px solid #ddd;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  header .logo h1 {
-    font-size: 1.2rem;
-  }
-
-  .post img {
-    height: 130px;
-  }
+  padding: 10px;
+  color: #555;
+  font-size: 14px;
 }
