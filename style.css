@@ -227,3 +227,29 @@ body {
 .readmore:hover {
   background: #b71c1c;
 }
+/* ====== Category Filter Buttons ====== */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.filter-btn {
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  color: #333;
+}
+.filter-btn:hover {
+  background: #ffeaea;
+  border-color: #c62828;
+}
+.filter-btn.active {
+  background: #c62828;
+  color: white;
+  border-color: #b71c1c;
+}
