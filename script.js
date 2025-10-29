@@ -119,3 +119,42 @@ function filterPosts(category) {
     }
   });
 }
+
+// =================== Featured Highlights (Dynamic from Sheet) ===================
+document.addEventListener("DOMContentLoaded", async () => {
+  const highlightsURL =
+    "https://opensheet.elk.sh/1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE/Highlights";
+  const list = document.getElementById("highlight-list");
+  if (!list) return;
+
+  async function loadHighlights() {
+    try {
+      const res = await fetch(highlightsURL);
+      if (!res.ok) throw new Error("Network error loading highlights");
+      const data = await res.json();
+      list.innerHTML = "";
+
+      if (data.length === 0) {
+        list.innerHTML = "<li>⚠️ सध्या कोणतेही अपडेट उपलब्ध नाहीत.</li>";
+        return;
+      }
+
+      data.forEach((row) => {
+        const li = document.createElement("li");
+        li.textContent = row.Title;
+        list.appendChild(li);
+      });
+
+      // पुन्हा animate करायला list reset करा
+      list.style.animation = "none";
+      void list.offsetWidth; // reflow
+      list.style.animation = null;
+    } catch (err) {
+      console.error("Highlights load error:", err);
+      list.innerHTML = "<li>⚠️ अपडेट लोड करण्यात त्रुटी आली.</li>";
+    }
+  }
+
+  await loadHighlights();
+  setInterval(loadHighlights, 300000); // दर 5 मिनिटांनी auto-refresh
+});
