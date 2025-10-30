@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://maharashtrasaralsevabharti.github.io/mssb/</loc></url>
-  <url><loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/nokari.html</loc></url>
-  <url><loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/yojana.html</loc></url>
-  <url><loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/shetkari.html</loc></url>
-  <url><loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/shasan.html</loc></url>
-  <url><loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/pdf.html</loc></url>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://maharashtrasaralsevabharti.github.io/mssb/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/nokari.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/yojana.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/shetkari.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/shasan.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://maharashtrasaralsevabharti.github.io/mssb/pages/pdf.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
