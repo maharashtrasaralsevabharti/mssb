@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /private/
-Disallow: /test/
 
 Sitemap: https://maharashtrasaralsevabharti.github.io/mssb/sitemap.xml
