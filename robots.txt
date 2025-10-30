@@ -1,3 +1,19 @@
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
+
+# Disallow unnecessary files/folders (optional cleanup)
+Disallow: /images/
+Disallow: /pages/
+
+# Sitemap location for Google and Bing
 Sitemap: https://maharashtrasaralsevabharti.github.io/mssb/sitemap.xml
+
+# Additional SEO references
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# End of robots.txt
