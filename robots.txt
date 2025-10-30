@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://maharashtrasaralsevabharti.github.io/mssb/sitemap.xml
+
+# Prevent unnecessary crawling
+Disallow: /images/
+Disallow: /pages/temp/
