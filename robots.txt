@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://maharashtrasaralsevabharti.github.io/mssb/sitemap.xml
