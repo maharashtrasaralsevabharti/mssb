@@ -107,6 +107,8 @@ async function loadPosts() {
 
         postsContainer.appendChild(card);
       });
+      generateSchemaForPosts(data);
+      
     } else {
       postsContainer.innerHTML = "<p>⚠️ कोणतीही पोस्ट्स उपलब्ध नाहीत.</p>";
     }
@@ -133,6 +135,41 @@ setInterval(() => {
   loadPosts();
   loadHighlights();
 }, 5 * 60 * 1000);
+// ✅ Generate JSON-LD Schema for Each Post
+function generateSchemaForPosts(posts) {
+  posts.forEach(post => {
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": post.Title || "Untitled Post",
+      "description": post.Description || "No description available.",
+      "image": post.Image || "https://maharashtrasaralsevabharti.github.io/mssb/default.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Maharashtra Saral Seva Bharti",
+        "url": "https://maharashtrasaralsevabharti.github.io/mssb"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Maharashtra Saral Seva Bharti",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://maharashtrasaralsevabharti.github.io/mssb/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": post.Link || "https://maharashtrasaralsevabharti.github.io/mssb"
+      },
+      "datePublished": new Date().toISOString()
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(schemaData, null, 2);
+    document.head.appendChild(script);
+  });
+}
 
 // ✅ Initial Load
 document.addEventListener("DOMContentLoaded", () => {
