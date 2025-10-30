@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maharashtra Saral Seva Bharti</title>
+    <link>https://maharashtrasaralsevabharti.github.io/mssb/</link>
+    <description>Latest Government Jobs, Schemes and News Updates in Marathi</description>
+    <language>mr</language>
+    <atom:link href="https://maharashtrasaralsevabharti.github.io/mssb/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- ✅ RSS posts will load dynamically -->
+    <script>
+      const SHEET_ID = "1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE";
+      const POSTS_SHEET = "MSSB_Post";
+
+      fetch(`https://opensheet.elk.sh/${SHEET_ID}/${POSTS_SHEET}`)
+        .then(res => res.json())
+        .then(data => {
+          let rssItems = "";
+          data.forEach(post => {
+            rssItems += `
+              <item>
+                <title><![CDATA[${post.Title}]]></title>
+                <link>${post.Link}</link>
+                <description><![CDATA[${post.Description || ''}]]></description>
+                <pubDate>${new Date().toUTCString()}</pubDate>
+                <guid>${post.Link}</guid>
+              </item>`;
+          });
+          document.write(rssItems);
+        })
+        .catch(err => console.error(err));
+    </script>
+
+  </channel>
+</rss>
