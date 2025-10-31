@@ -1,0 +1,32 @@
+name: Auto RSS Feed Generator
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # ⏱️ प्रत्येक 30 मिनिटांनी रन होईल
+  workflow_dispatch:          # हवं तर manually चालवू शकतो
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install node-fetch@2
+
+      - name: Run RSS Generator
+        run: node rss-generator.js
+
+      - name: Commit and push feed updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.xml feed.html
+          git commit -m "🔄 Auto update RSS feed"
+          git push
