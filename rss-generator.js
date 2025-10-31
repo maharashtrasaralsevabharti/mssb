@@ -1,4 +1,4 @@
-// ✅ Maharashtra Saral Seva Bharti - Advanced RSS + HTML Feed Generator (v2)
+// ✅ Maharashtra Saral Seva Bharti - Professional News Portal Feed Generator (v3)
 const fs = require("fs");
 const fetch = require("node-fetch");
 
@@ -8,7 +8,7 @@ const SITE_URL = "https://maharashtrasaralsevabharti.github.io/mssb";
 
 async function generateFeeds() {
   try {
-    console.log("🚀 Fetching data from Google Sheet...");
+    console.log("🚀 Fetching posts from Google Sheet...");
     const res = await fetch(`https://opensheet.elk.sh/${SHEET_ID}/${POSTS_SHEET}`);
     const data = await res.json();
 
@@ -17,7 +17,9 @@ async function generateFeeds() {
       return;
     }
 
-    // RSS XML Feed
+    // ----------------------------
+    // 🔹 Generate feed.xml (for SEO)
+    // ----------------------------
     const rssItems = data.map(post => `
       <item>
         <title><![CDATA[${post.Title || "Untitled"}]]></title>
@@ -26,7 +28,7 @@ async function generateFeeds() {
         <description><![CDATA[${post.Description || ""}]]></description>
         <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
         <pubDate>${new Date().toUTCString()}</pubDate>
-        <category><![CDATA[Latest Update]]></category>
+        <category><![CDATA[${post.Category || "Update"}]]></category>
       </item>`).join("\n");
 
     const rssFeed = `
@@ -41,37 +43,110 @@ async function generateFeeds() {
         </channel>
       </rss>
     `;
-
     fs.writeFileSync("feed.xml", rssFeed.trim());
 
-    // HTML Feed
+    // ----------------------------
+    // 🔹 Generate feed.html (Visual Portal Look)
+    // ----------------------------
     const htmlFeed = `
       <!DOCTYPE html>
       <html lang="mr">
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ताज्या भरती अपडेट्स - महाराष्ट्र सरळ सेवा भरती</title>
+        <title>ताज्या भरती आणि योजना अपडेट्स - महाराष्ट्र सरळ सेवा भरती</title>
         <style>
-          body { font-family: 'Noto Sans Devanagari', sans-serif; background: #f6f6f6; margin: 0; padding: 20px; }
-          h1 { color: #b30000; text-align: center; }
-          .feed-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
-          .card { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-          .card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-          .card h2 { font-size: 1.1rem; color: #222; margin-bottom: 10px; }
-          .card p { font-size: 0.9rem; color: #555; }
-          .read-more { display: inline-block; margin-top: 10px; color: #b30000; text-decoration: none; font-weight: bold; }
-          footer { text-align: center; margin-top: 40px; font-size: 0.85rem; color: #666; }
+          body {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            background: #fafafa;
+            margin: 0;
+            padding: 0;
+          }
+          header {
+            background: linear-gradient(90deg, #b30000, #ff4d4d);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+          }
+          .feed-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            padding: 25px;
+            max-width: 1200px;
+            margin: auto;
+          }
+          .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+          }
+          .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          }
+          .thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #eee;
+          }
+          .content {
+            padding: 15px;
+          }
+          .category {
+            display: inline-block;
+            background: #b30000;
+            color: white;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            padding: 3px 8px;
+            margin-bottom: 8px;
+          }
+          h2 {
+            font-size: 1.1rem;
+            margin: 8px 0;
+            color: #222;
+          }
+          p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+          }
+          .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #b30000;
+            font-weight: bold;
+            text-decoration: none;
+          }
+          footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+          }
         </style>
       </head>
       <body>
-        <h1>📰 ताज्या भरती अपडेट्स</h1>
+        <header>📰 ताज्या भरती आणि सरकारी योजना अपडेट्स</header>
         <div class="feed-container">
           ${data.map(post => `
             <div class="card">
-              <h2>${post.Title || "Untitled"}</h2>
-              <p>${post.Description || "अधिक माहितीसाठी लिंक तपासा."}</p>
-              <a class="read-more" href="${post.Link || SITE_URL}" target="_blank">👉 अधिक वाचा</a>
+              ${post.Image ? `<img src="${post.Image}" alt="${post.Title}" class="thumb">` : ""}
+              <div class="content">
+                <span class="category">${post.Category || "अपडेट"}</span>
+                <h2>${post.Title || "Untitled Post"}</h2>
+                <p>${post.Description || "अधिक माहितीसाठी लिंक तपासा."}</p>
+                <a href="${post.Link || SITE_URL}" target="_blank" class="read-more">👉 अधिक वाचा</a>
+              </div>
             </div>
           `).join("")}
         </div>
@@ -81,7 +156,7 @@ async function generateFeeds() {
     `;
 
     fs.writeFileSync("feed.html", htmlFeed.trim());
-    console.log("✅ Feeds generated successfully (feed.xml & feed.html)");
+    console.log("✅ feed.xml आणि feed.html दोन्ही तयार झाले (Professional UI)");
   } catch (err) {
     console.error("❌ Error generating feeds:", err);
   }
