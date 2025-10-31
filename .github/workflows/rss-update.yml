@@ -23,7 +23,7 @@ jobs:
       - name: Run RSS Generator
         run: node rss-generator.js
 
-     - name: Commit and push feed updates
+   - name: Commit and push feed updates
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   run: |
@@ -32,3 +32,4 @@ jobs:
     git add feed.xml feed.html
     git diff --cached --quiet || git commit -m "🔄 Auto update RSS feed"
     git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+y }} HEAD:${{ github.ref }}
