@@ -1,4 +1,4 @@
-// ✅ Maharashtra Saral Seva Bharti - Professional News Portal Feed Generator (v3)
+// ✅ Maharashtra Saral Seva Bharti - Fully Responsive Marathi News Feed (v4)
 const fs = require("fs");
 const fetch = require("node-fetch");
 
@@ -8,7 +8,6 @@ const SITE_URL = "https://maharashtrasaralsevabharti.github.io/mssb";
 
 async function generateFeeds() {
   try {
-    console.log("🚀 Fetching posts from Google Sheet...");
     const res = await fetch(`https://opensheet.elk.sh/${SHEET_ID}/${POSTS_SHEET}`);
     const data = await res.json();
 
@@ -17,9 +16,7 @@ async function generateFeeds() {
       return;
     }
 
-    // ----------------------------
-    // 🔹 Generate feed.xml (for SEO)
-    // ----------------------------
+    // RSS XML
     const rssItems = data.map(post => `
       <item>
         <title><![CDATA[${post.Title || "Untitled"}]]></title>
@@ -28,7 +25,7 @@ async function generateFeeds() {
         <description><![CDATA[${post.Description || ""}]]></description>
         <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
         <pubDate>${new Date().toUTCString()}</pubDate>
-        <category><![CDATA[${post.Category || "Update"}]]></category>
+        <category><![CDATA[${post.Category || "अपडेट"}]]></category>
       </item>`).join("\n");
 
     const rssFeed = `
@@ -45,9 +42,7 @@ async function generateFeeds() {
     `;
     fs.writeFileSync("feed.xml", rssFeed.trim());
 
-    // ----------------------------
-    // 🔹 Generate feed.html (Visual Portal Look)
-    // ----------------------------
+    // Feed HTML (Fully Responsive)
     const htmlFeed = `
       <!DOCTYPE html>
       <html lang="mr">
@@ -56,62 +51,64 @@ async function generateFeeds() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ताज्या भरती आणि योजना अपडेट्स - महाराष्ट्र सरळ सेवा भरती</title>
         <style>
+          * { box-sizing: border-box; margin: 0; padding: 0; }
           body {
             font-family: 'Noto Sans Devanagari', sans-serif;
             background: #fafafa;
-            margin: 0;
-            padding: 0;
+            color: #222;
           }
           header {
             background: linear-gradient(90deg, #b30000, #ff4d4d);
             color: white;
             text-align: center;
             padding: 15px;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            letter-spacing: 0.5px;
           }
           .feed-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-            padding: 25px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1100px;
             margin: auto;
           }
           .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
           }
           .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
           }
           .thumb {
             width: 100%;
             height: 180px;
             object-fit: cover;
-            background: #eee;
+            display: block;
           }
           .content {
             padding: 15px;
           }
           .category {
             display: inline-block;
-            background: #b30000;
-            color: white;
-            font-size: 0.75rem;
+            padding: 4px 10px;
             border-radius: 4px;
-            padding: 3px 8px;
+            font-size: 0.75rem;
+            color: white;
             margin-bottom: 8px;
           }
+          .category[data-type="भरती"] { background: #007bff; }
+          .category[data-type="योजना"] { background: #28a745; }
+          .category[data-type="शेतकरी"] { background: #f0ad4e; }
+          .category[data-type="निर्णय"] { background: #6f42c1; }
           h2 {
-            font-size: 1.1rem;
-            margin: 8px 0;
-            color: #222;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
           }
           p {
             font-size: 0.9rem;
@@ -120,29 +117,40 @@ async function generateFeeds() {
           }
           .read-more {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 8px;
+            font-size: 0.85rem;
             color: #b30000;
-            font-weight: bold;
             text-decoration: none;
+            font-weight: bold;
           }
           footer {
             text-align: center;
             padding: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
-            border-top: 1px solid #ddd;
-            margin-top: 40px;
+            background: #f1f1f1;
+            margin-top: 20px;
+          }
+          /* 🔹 Mobile optimization */
+          @media (max-width: 600px) {
+            header { font-size: 1rem; padding: 10px; }
+            .feed-container { padding: 10px; gap: 10px; }
+            .card { border-radius: 8px; }
+            .thumb { height: 160px; }
+            .content { padding: 12px; }
+            h2 { font-size: 0.95rem; }
+            p { font-size: 0.85rem; }
           }
         </style>
       </head>
       <body>
-        <header>📰 ताज्या भरती आणि सरकारी योजना अपडेट्स</header>
+        <header>📢 ताज्या भरती आणि सरकारी योजना अपडेट्स</header>
         <div class="feed-container">
           ${data.map(post => `
             <div class="card">
               ${post.Image ? `<img src="${post.Image}" alt="${post.Title}" class="thumb">` : ""}
               <div class="content">
-                <span class="category">${post.Category || "अपडेट"}</span>
+                <span class="category" data-type="${post.Category || 'अपडेट'}">${post.Category || "अपडेट"}</span>
                 <h2>${post.Title || "Untitled Post"}</h2>
                 <p>${post.Description || "अधिक माहितीसाठी लिंक तपासा."}</p>
                 <a href="${post.Link || SITE_URL}" target="_blank" class="read-more">👉 अधिक वाचा</a>
@@ -154,9 +162,8 @@ async function generateFeeds() {
       </body>
       </html>
     `;
-
     fs.writeFileSync("feed.html", htmlFeed.trim());
-    console.log("✅ feed.xml आणि feed.html दोन्ही तयार झाले (Professional UI)");
+    console.log("✅ feed.xml आणि feed.html तयार झाले (Fully Responsive UI)");
   } catch (err) {
     console.error("❌ Error generating feeds:", err);
   }
