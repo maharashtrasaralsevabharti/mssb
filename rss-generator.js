@@ -1,28 +1,28 @@
-// ✅ Maharashtra Saral Seva Bharti - Advanced RSS + HTML Feed Generator
-
+// ✅ Maharashtra Saral Seva Bharti - Advanced RSS + HTML Feed Generator (v2)
 const fs = require("fs");
 const fetch = require("node-fetch");
 
 const SHEET_ID = "1t_my2HdNcRqoLrWk1LJQLbZrMLvLMOtqKeZfQyRiiNE";
 const POSTS_SHEET = "MSSB_Post";
+const SITE_URL = "https://maharashtrasaralsevabharti.github.io/mssb";
 
 async function generateFeeds() {
   try {
-    const response = await fetch(`https://opensheet.elk.sh/${SHEET_ID}/${POSTS_SHEET}`);
-    const data = await response.json();
-    const siteUrl = "https://maharashtrasaralsevabharti.github.io/mssb";
+    console.log("🚀 Fetching data from Google Sheet...");
+    const res = await fetch(`https://opensheet.elk.sh/${SHEET_ID}/${POSTS_SHEET}`);
+    const data = await res.json();
 
     if (!data || data.length === 0) {
       console.error("⚠️ No posts found in sheet.");
       return;
     }
 
-    // 🔹 RSS XML Feed (for Google / SEO)
+    // RSS XML Feed
     const rssItems = data.map(post => `
       <item>
         <title><![CDATA[${post.Title || "Untitled"}]]></title>
-        <link>${post.Link || siteUrl}</link>
-        <guid>${post.Link || siteUrl}</guid>
+        <link>${post.Link || SITE_URL}</link>
+        <guid>${post.Link || SITE_URL}</guid>
         <description><![CDATA[${post.Description || ""}]]></description>
         <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
         <pubDate>${new Date().toUTCString()}</pubDate>
@@ -34,7 +34,7 @@ async function generateFeeds() {
       <rss version="2.0">
         <channel>
           <title>Maharashtra Saral Seva Bharti - Official Updates</title>
-          <link>${siteUrl}</link>
+          <link>${SITE_URL}</link>
           <description>Latest Sarkari Bharti, Yojana, and Updates in Marathi</description>
           <language>mr-IN</language>
           ${rssItems}
@@ -44,7 +44,7 @@ async function generateFeeds() {
 
     fs.writeFileSync("feed.xml", rssFeed.trim());
 
-    // 🔹 HTML Feed (Beautiful UI)
+    // HTML Feed
     const htmlFeed = `
       <!DOCTYPE html>
       <html lang="mr">
@@ -53,11 +53,11 @@ async function generateFeeds() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ताज्या भरती अपडेट्स - महाराष्ट्र सरळ सेवा भरती</title>
         <style>
-          body { font-family: 'Noto Sans Devanagari', sans-serif; background: #f7f7f7; margin: 0; padding: 20px; }
+          body { font-family: 'Noto Sans Devanagari', sans-serif; background: #f6f6f6; margin: 0; padding: 20px; }
           h1 { color: #b30000; text-align: center; }
           .feed-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
           .card { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-          .card:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+          .card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
           .card h2 { font-size: 1.1rem; color: #222; margin-bottom: 10px; }
           .card p { font-size: 0.9rem; color: #555; }
           .read-more { display: inline-block; margin-top: 10px; color: #b30000; text-decoration: none; font-weight: bold; }
@@ -71,7 +71,7 @@ async function generateFeeds() {
             <div class="card">
               <h2>${post.Title || "Untitled"}</h2>
               <p>${post.Description || "अधिक माहितीसाठी लिंक तपासा."}</p>
-              <a class="read-more" href="${post.Link || siteUrl}" target="_blank">👉 अधिक वाचा</a>
+              <a class="read-more" href="${post.Link || SITE_URL}" target="_blank">👉 अधिक वाचा</a>
             </div>
           `).join("")}
         </div>
@@ -81,8 +81,7 @@ async function generateFeeds() {
     `;
 
     fs.writeFileSync("feed.html", htmlFeed.trim());
-
-    console.log("✅ feed.xml आणि feed.html दोन्ही तयार झाले!");
+    console.log("✅ Feeds generated successfully (feed.xml & feed.html)");
   } catch (err) {
     console.error("❌ Error generating feeds:", err);
   }
