@@ -5,15 +5,18 @@ on:
     - cron: "*/30 * * * *"   # ⏱️ प्रत्येक 30 मिनिटांनी auto run
   workflow_dispatch:          # manually run करता येईल
 
+permissions:
+  contents: write             # ✅ आवश्यक permission for git push
+
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
 
@@ -23,13 +26,12 @@ jobs:
       - name: Run RSS Generator
         run: node rss-generator.js
 
-   - name: Commit and push feed updates
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  run: |
-    git config --global user.name "github-actions[bot]"
-    git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    git add feed.xml feed.html
-    git diff --cached --quiet || git commit -m "🔄 Auto update RSS feed"
-    git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
-y }} HEAD:${{ github.ref }}
+      - name: Commit and push feed updates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.xml feed.html
+          git diff --cached --quiet || git commit -m "🔄 Auto update RSS feed"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
