@@ -12,17 +12,20 @@
     <h1>💼 नोकरी भरती</h1>
   </header>
 
-  <main style="max-width:900px;margin:auto;padding:20px;line-height:1.8;">
-    <p>या विभागात महाराष्ट्रातील सर्व सरकारी भरती, जाहिराती आणि परीक्षांबद्दल माहिती प्रकाशित केली जाईल.</p>
-    <div class="info-box">
-      <p><strong>⚙️ माहिती अद्ययावत केली जात आहे...</strong><br>कृपया लवकरच पुन्हा भेट द्या.</p>
-    </div>
-
-    <a href="../index.html">⬅️ मुख्यपृष्ठावर परत जा</a>
+  <main style="max-width:900px;margin:auto;padding:20px;">
+    <div id="posts-container"></div>
   </main>
 
   <footer>
     <p>© 2025 Maharashtra Saral Seva Bharti | सर्व हक्क राखीव.</p>
   </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      loadCategoryPosts("नोकरी भरती");
+      setInterval(() => loadCategoryPosts("नोकरी भरती"), 5 * 60 * 1000);
+    });
+  </script>
 </body>
 </html>
