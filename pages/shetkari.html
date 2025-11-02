@@ -12,17 +12,21 @@
     <h1>🌾 शेतकरी अपडेट्स</h1>
   </header>
 
-  <main style="max-width:900px;margin:auto;padding:20px;line-height:1.8;">
-    <p>या विभागात शेतकऱ्यांसाठी उपलब्ध योजना, सल्ले आणि नवीन शासन निर्णयांची माहिती दिली जाईल.</p>
-    <div class="info-box">
-      <p><strong>⚙️ माहिती अद्ययावत केली जात आहे...</strong><br>कृपया लवकरच पुन्हा भेट द्या.</p>
-    </div>
-
-    <a href="../index.html">⬅️ मुख्यपृष्ठावर परत जा</a>
+  <main style="max-width:900px;margin:auto;padding:20px;">
+    <div id="posts-container"></div>
   </main>
 
   <footer>
     <p>© 2025 Maharashtra Saral Seva Bharti | सर्व हक्क राखीव.</p>
   </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      loadCategoryPosts("शेतकरी");
+      setInterval(() => loadCategoryPosts("शेतकरी"), 5 * 60 * 1000);
+    });
+  </script>
 </body>
 </html>
+
