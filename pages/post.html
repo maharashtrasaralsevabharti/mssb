@@ -137,6 +137,22 @@
     .related-card a:hover {
       background: #007bff;
     }
+/* --- Animation Effects --- */
+.related-card {
+  background: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.related-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
     .back-link {
       display: inline-block;
@@ -225,6 +241,7 @@
         if (related.length > 0) {
           relatedSection.style.display = "block";
           relatedContainer.innerHTML = related.map(r => `
+          animateCards();
             <div class="related-card">
               <img src="${r.Image || '../default.jpg'}" alt="${r.Title}">
               <h4>${r.Title}</h4>
@@ -238,6 +255,21 @@
         container.innerHTML = "<p>⚠️ डेटा मिळवण्यात त्रुटी आली.</p>";
       }
     }
+
+    // --- Animate Related Cards ---
+function animateCards() {
+  const cards = document.querySelectorAll('.related-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+}
 
     document.addEventListener("DOMContentLoaded", loadSinglePost);
   </script>
