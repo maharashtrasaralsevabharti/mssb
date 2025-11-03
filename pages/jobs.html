@@ -1,31 +1,9 @@
 <!DOCTYPE html>
-<html lang="mr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>नोकरी भरती - महाराष्ट्र सरळ सेवा भरती</title>
-  <meta name="description" content="महाराष्ट्रातील सर्व सरकारी नोकरी भरती, जाहिराती आणि परीक्षांची माहिती.">
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-  <header>
-    <h1>💼 नोकरी भरती</h1>
-  </header>
-
-  <main style="max-width:900px;margin:auto;padding:20px;">
-    <div id="posts-container"></div>
-  </main>
-
-  <footer>
-    <p>© 2025 Maharashtra Saral Seva Bharti | सर्व हक्क राखीव.</p>
-  </footer>
-
+<html lang="mr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>नोकरी भरती - महाराष्ट्र सरळ सेवा भरती</title><meta name="description" content="महाराष्ट्रातील सर्व सरकारी नोकरी भरती माहिती."/><link rel="stylesheet" href="../style.css"/></head><body>
+  <header class="header"><div class="container header-inner"><div class="brand"><img src="../assets/logo.png" class="logo" alt="logo"><div><h1 class="site-title">नोकरी भरती</h1></div></div></div></header>
+  <main class="container"><div id="category-posts"></div></main>
+  <footer class="site-footer"><div class="container"><p>© <span id="y">2025</span> Maharashtra Saral Seva Bharti</p></div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
   <script src="../script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      loadCategoryPosts("नोकरी भरती");
-      setInterval(() => loadCategoryPosts("नोकरी भरती"), 5 * 60 * 1000);
-    });
-  </script>
-</body>
-</html>
+  <script>document.addEventListener('DOMContentLoaded', ()=>{ loadCategoryPosts("नोकरी भरती"); setInterval(()=>loadCategoryPosts("नोकरी भरती"),5*60*1000); });</script>
+</body></html>
