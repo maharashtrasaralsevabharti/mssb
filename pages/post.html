@@ -1,277 +1,28 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>पोस्ट माहिती - महाराष्ट्र सरळ सेवा भरती</title>
-  <meta name="description" content="ताजी सरकारी भरती, योजना आणि अपडेट्स - Maharashtra Saral Seva Bharti">
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    body {
-      background: #f9f9f9;
-      font-family: 'Noto Sans Devanagari', sans-serif;
-    }
-
-    .post-wrapper {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-
-    .post-header {
-      text-align: center;
-      padding: 25px 15px;
-      background: linear-gradient(135deg, #007bff, #00bcd4);
-      color: #fff;
-    }
-
-    .post-header h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .meta {
-      font-size: 14px;
-      color: #e0e0e0;
-    }
-
-    .post-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-    }
-
-    .post-content {
-      padding: 25px;
-      line-height: 1.8;
-      color: #333;
-      font-size: 17px;
-    }
-
-    .post-content p {
-      margin-bottom: 15px;
-    }
-
-    .share-section {
-      text-align: center;
-      border-top: 1px solid #ddd;
-      padding: 20px;
-      background: #f6f6f6;
-    }
-
-    .share-section h3 {
-      margin-bottom: 10px;
-    }
-
-    .share-icons a {
-      display: inline-block;
-      margin: 0 8px;
-      text-decoration: none;
-      font-size: 24px;
-    }
-
-    .share-icons a:hover {
-      transform: scale(1.1);
-    }
-
-    .related-posts {
-      margin: 30px auto;
-      max-width: 900px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .related-posts h2 {
-      margin-bottom: 20px;
-      border-bottom: 2px solid #00bcd4;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .related-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-
-    .related-card {
-      background: #fafafa;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
-
-    .related-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .related-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .related-card h4 {
-      font-size: 16px;
-      padding: 10px;
-      margin: 0;
-      color: #333;
-    }
-
-    .related-card a {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      background: #00bcd4;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .related-card a:hover {
-      background: #007bff;
-    }
-/* --- Animation Effects --- */
-.related-card {
-  background: #fafafa;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.related-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-    .back-link {
-      display: inline-block;
-      margin: 20px;
-      text-decoration: none;
-      color: #007bff;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      background: #fafafa;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>पोस्ट - महाराष्ट्र सरळ सेवा भरती</title>
+  <meta name="description" content="संपूर्ण माहिती - Maharashtra Saral Seva Bharti" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-
-  <div class="post-wrapper">
+  <div class="post-wrapper container">
     <div id="post-content"><p style="padding:30px;text-align:center;">लोड होत आहे...</p></div>
   </div>
 
-  <div class="related-posts" id="related-section" style="display:none;">
+  <div class="related-posts container hidden" id="related-section">
     <h2>📚 संबंधित पोस्ट्स</h2>
     <div class="related-container" id="related-container"></div>
   </div>
 
-  <footer>
-    © 2025 Maharashtra Saral Seva Bharti | सर्व हक्क राखीव.
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year2">2025</span> Maharashtra Saral Seva Bharti</p></div>
   </footer>
 
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
   <script src="../script.js"></script>
-  <script>
-    async function loadSinglePost() {
-      const params = new URLSearchParams(window.location.search);
-      const postId = params.get("id");
-      const container = document.getElementById("post-content");
-      const relatedSection = document.getElementById("related-section");
-      const relatedContainer = document.getElementById("related-container");
-
-      if (!postId) {
-        container.innerHTML = "<p>⚠️ पोस्ट सापडली नाही.</p>";
-        return;
-      }
-
-      try {
-        const response = await fetch(`https://opensheet.elk.sh/${SHEET_ID}/${POSTS_SHEET}`);
-        const data = await response.json();
-        const post = data.find(p => p.ID === postId);
-
-        if (!post) {
-          container.innerHTML = "<p>⚠️ ही पोस्ट उपलब्ध नाही.</p>";
-          return;
-        }
-
-        const postURL = window.location.href;
-
-        // --- Main Post Render ---
-        container.innerHTML = `
-          <div class="post-header">
-            <h1>${post.Title}</h1>
-            <div class="meta">📅 ${post.Date || ""} | 🏷️ ${post.Category || ""}</div>
-          </div>
-          <img src="${post.Image || '../default.jpg'}" class="post-image" alt="${post.Title}">
-          <div class="post-content">${post.Content || post.Description || ""}</div>
-          <div class="share-section">
-            <h3>📢 शेअर करा</h3>
-            <div class="share-icons">
-              <a href="https://wa.me/?text=${encodeURIComponent(post.Title + ' - ' + postURL)}" target="_blank" title="WhatsApp">🟢</a>
-              <a href="https://t.me/share/url?url=${encodeURIComponent(postURL)}&text=${encodeURIComponent(post.Title)}" target="_blank" title="Telegram">🔵</a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postURL)}" target="_blank" title="Facebook">🔷</a>
-              <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(postURL)}&text=${encodeURIComponent(post.Title)}" target="_blank" title="Twitter">⚫</a>
-            </div>
-          </div>
-          <a href="../index.html" class="back-link">⬅️ मुख्यपृष्ठावर परत जा</a>
-        `;
-
-        // --- Related Posts Render ---
-        const related = data
-          .filter(p => p.Category === post.Category && p.ID !== post.ID)
-          .sort(() => 0.5 - Math.random()) // randomize
-          .slice(0, 3);
-
-        if (related.length > 0) {
-          relatedSection.style.display = "block";
-          relatedContainer.innerHTML = related.map(r => `
-          animateCards();
-            <div class="related-card">
-              <img src="${r.Image || '../default.jpg'}" alt="${r.Title}">
-              <h4>${r.Title}</h4>
-              <a href="post.html?id=${r.ID}">अधिक वाचा</a>
-            </div>
-          `).join("");
-        }
-
-      } catch (error) {
-        console.error(error);
-        container.innerHTML = "<p>⚠️ डेटा मिळवण्यात त्रुटी आली.</p>";
-      }
-    }
-
-    // --- Animate Related Cards ---
-function animateCards() {
-  const cards = document.querySelectorAll('.related-card');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  cards.forEach(card => observer.observe(card));
-}
-
-    document.addEventListener("DOMContentLoaded", loadSinglePost);
-  </script>
+  <script>document.addEventListener('DOMContentLoaded', window.loadSinglePost);</script>
 </body>
 </html>
