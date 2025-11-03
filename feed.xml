@@ -1,99 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-      <rss version="2.0">
-        <channel>
-          <title>Maharashtra Saral Seva Bharti - Official Updates</title>
-          <link>https://maharashtrasaralsevabharti.github.io/mssb</link>
-          <description>Latest Sarkari Bharti, Yojana, and Updates in Marathi</description>
-          <language>mr-IN</language>
-          
-      <item>
-        <title><![CDATA[पोलीस भरती 2025 सुरू]]></title>
-        <link>https://www.mahapolice.gov.in</link>
-        <guid>https://www.mahapolice.gov.in</guid>
-        <description><![CDATA[ऑनलाईन अर्ज प्रक्रिया सुरू झाली आहे.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[नोकरी भरती]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[शेतकरी सौर पंप योजना]]></title>
-        <link>https://www.mahadiscom.in</link>
-        <guid>https://www.mahadiscom.in</guid>
-        <description><![CDATA[नवीन अर्ज खुले झाले आहेत.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[शेतकरी]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[MPSC वेळापत्रक प्रसिद्ध]]></title>
-        <link>https://mpsc.gov.in</link>
-        <guid>https://mpsc.gov.in</guid>
-        <description><![CDATA[अधिकृत वेळापत्रक प्रसिद्ध केले आहे.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[सरकारी योजना]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[महसूल विभाग भरती]]></title>
-        <link>https://maharashtra.gov.in</link>
-        <guid>https://maharashtra.gov.in</guid>
-        <description><![CDATA[नव्या पदांची जाहिरात लवकरच.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[शासन निर्णय]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[पोलीस भरती 2025 सुरू]]></title>
-        <link>https://www.mahapolice.gov.in</link>
-        <guid>https://www.mahapolice.gov.in</guid>
-        <description><![CDATA[ऑनलाईन अर्ज प्रक्रिया सुरू झाली आहे.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[नोकरी भरती]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[शेतकरी सौर पंप योजना]]></title>
-        <link>https://www.mahapolice.gov.in</link>
-        <guid>https://www.mahapolice.gov.in</guid>
-        <description><![CDATA[नवीन अर्ज खुले झाले आहेत.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[शेतकरी]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[MPSC वेळापत्रक प्रसिद्ध]]></title>
-        <link>https://www.mahadiscom.in</link>
-        <guid>https://www.mahadiscom.in</guid>
-        <description><![CDATA[अधिकृत वेळापत्रक प्रसिद्ध केले आहे.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[सरकारी योजना]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[महसूल विभाग भरती]]></title>
-        <link>https://mpsc.gov.in</link>
-        <guid>https://mpsc.gov.in</guid>
-        <description><![CDATA[नव्या पदांची जाहिरात लवकरच.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[शासन निर्णय]]></category>
-      </item>
-
-      <item>
-        <title><![CDATA[पोलीस भरती 2025 सुरू]]></title>
-        <link>https://maharashtra.gov.in</link>
-        <guid>https://maharashtra.gov.in</guid>
-        <description><![CDATA[ऑनलाईन अर्ज प्रक्रिया सुरू झाली आहे.]]></description>
-        <author><![CDATA[Maharashtra Saral Seva Bharti]]></author>
-        <pubDate>Mon, 03 Nov 2025 09:47:33 GMT</pubDate>
-        <category><![CDATA[शासन निर्णय]]></category>
-      </item>
-        </channel>
-      </rss>
+<rss version="2.0">
+  <channel>
+    <title>Maharashtra Saral Seva Bharti - RSS</title>
+    <link>https://maharashtrasaralsevabharti.github.io/mssb/</link>
+    <description>Latest updates</description>
+    <language>mr-IN</language>
+    <!-- feed.xml will be replaced by rss-generator (GitHub Action) -->
+  </channel>
+</rss>
