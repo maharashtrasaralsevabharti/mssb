@@ -1,185 +1,66 @@
-/* ✅ General Styling */
-body {
-  margin: 0;
-  font-family: "Baloo 2", sans-serif;
-  background: #fafafa;
-  color: #222;
+/* style.css - MSSB v4.1 Final (Noto Sans Devanagari) */
+:root{
+  --accent:#b30000;
+  --muted:#666;
+  --bg:#fafafa;
+  --card:#fff;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Noto Sans Devanagari',sans-serif;background:var(--bg);color:#222}
+.container{width:94%;max-width:1200px;margin:0 auto}
+
+/* Header */
+.header{background:#fff;border-bottom:3px solid rgba(179,48,48,0.08);position:sticky;top:0;z-index:999;box-shadow:0 2px 6px rgba(0,0,0,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{height:62px;width:62px;object-fit:contain;border-radius:8px}
+.site-title{margin:0;font-size:1.2rem;color:var(--accent);font-weight:700}
+.tagline-wrap{display:flex;align-items:center;gap:8px}
+.tagline{font-weight:600;color:var(--accent);font-size:0.95rem}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--accent);animation:blink 0.8s infinite;margin-left:4px}
+@keyframes blink{50%{opacity:0}}
+
+/* Navbar */
+.navbar{display:flex;gap:14px;align-items:center}
+.navbar a{color:#333;text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600}
+.navbar a.active, .navbar a:hover{color:var(--accent);background:rgba(179,48,48,0.03)}
+
+/* Ticker / Highlights */
+.highlights{background:#fff8f8;padding:10px 12px;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(0,0,0,0.03);white-space:nowrap;overflow:hidden}
+.highlights .inner{display:inline-block;padding-left:100%;animation:scroll 18s linear infinite}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+/* Section title */
+.section-title{margin:20px 0 10px;font-size:1.1rem;color:#222}
+
+/* Posts grid */
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:30px}
+.post-card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.06);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.post-card:hover{transform:translateY(-6px);box-shadow:0 8px 22px rgba(0,0,0,0.12)}
+.post-card img{width:100%;height:170px;object-fit:cover}
+.post-card .content{padding:12px;flex:1;display:flex;flex-direction:column}
+.post-card h3{margin:0;color:var(--accent);font-size:1rem}
+.post-card p{margin:8px 0 12px;color:var(--muted);flex:1;font-size:0.9rem}
+.read-more{display:inline-block;background:var(--accent);color:#fff;padding:7px 12px;border-radius:6px;text-decoration:none;font-weight:700}
+
+/* Footer */
+.site-footer{background:#fff;padding:20px 0;border-top:1px solid rgba(0,0,0,0.04);margin-top:20px}
+.footer-links{margin-bottom:8px;text-align:center}
+.footer-links a{color:#333;text-decoration:none;margin:0 6px;font-weight:600}
+.social-icons{display:flex;gap:8px;justify-content:center;margin:10px 0}
+.social-icons img{width:36px;height:36px;object-fit:contain}
+
+/* Responsive */
+@media(max-width:900px){
+  .navbar{display:none}
+  .header-inner{padding:10px}
+  .logo{height:52px}
 }
 
-.container {
-  width: 95%;
-  max-width: 1200px;
-  margin: auto;
-}
+/* Utility */
+.info-box{background:#fff;border-left:4px solid var(--accent);padding:12px;border-radius:6px;margin:12px 0}
+.hidden{display:none}
 
-/* ✅ Header */
-.site-header {
-  background: #fff;
-  border-bottom: 2px solid #e53935;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 60px;
-  margin-right: 10px;
-}
-
-.main-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #444;
-  font-weight: 600;
-}
-
-.main-nav a:hover,
-.main-nav .active {
-  color: #e53935;
-}
-
-/* ✅ Typing Effect */
-.typing-wrap {
-  text-align: center;
-  padding: 20px 0;
-  background: #fff8f8;
-  color: #b71c1c;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.cursor {
-  display: inline-block;
-  background: #d32f2f;
-  width: 2px;
-  height: 1em;
-  margin-left: 5px;
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* ✅ Highlights */
-.highlights {
-  background: #fff3f3;
-  padding: 10px;
-  font-weight: 500;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-/* ✅ Social Cards */
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.social-card {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.social-card:hover {
-  transform: translateY(-4px);
-}
-
-.social-card img {
-  width: 45px;
-  margin-right: 10px;
-}
-
-/* ✅ Latest Posts */
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 15px;
-}
-
-.post-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.post-card:hover {
-  transform: translateY(-5px);
-}
-
-.post-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.post-card h3 {
-  font-size: 1.1rem;
-  margin: 10px;
-  color: #b71c1c;
-}
-
-.post-card p {
-  font-size: 0.9rem;
-  margin: 0 10px 10px;
-}
-
-.read-more {
-  display: inline-block;
-  margin: 0 10px 15px;
-  color: #fff;
-  background: #e53935;
-  padding: 6px 12px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.read-more:hover {
-  background: #b71c1c;
-}
-
-/* ✅ Footer */
-.site-footer {
-  text-align: center;
-  background: #e53935;
-  color: #fff;
-  padding: 15px;
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-
-/* ✅ Scroll Animation */
-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Scroll reveal for sections */
+section, .post-card, .related-card{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.visible{opacity:1;transform:translateY(0)}
