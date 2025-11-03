@@ -1,31 +1,9 @@
 <!DOCTYPE html>
-<html lang="mr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>शेतकरी अपडेट्स - महाराष्ट्र सरळ सेवा भरती</title>
-  <meta name="description" content="शेतकऱ्यांसाठी महाराष्ट्र सरकारच्या योजना, सल्ला आणि अनुदान माहिती.">
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-  <header>
-    <h1>🌾 शेतकरी अपडेट्स</h1>
-  </header>
-
-  <main style="max-width:900px;margin:auto;padding:20px;">
-    <div id="posts-container"></div>
-  </main>
-
-  <footer>
-    <p>© 2025 Maharashtra Saral Seva Bharti | सर्व हक्क राखीव.</p>
-  </footer>
-
+<html lang="mr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>शेतकरी - महाराष्ट्र सरळ सेवा भरती</title><meta name="description" content="शेतकऱ्यांसाठी योजना व माहिती."/><link rel="stylesheet" href="../style.css"/></head><body>
+  <header class="header"><div class="container header-inner"><div class="brand"><img src="../assets/logo.png" class="logo" alt="logo"><div><h1 class="site-title">शेतकरी</h1></div></div></div></header>
+  <main class="container"><div id="category-posts"></div></main>
+  <footer class="site-footer"><div class="container"><p>© <span id="y3">2025</span> Maharashtra Saral Seva Bharti</p></div></footer>
+  <script>document.getElementById('y3').textContent=new Date().getFullYear();</script>
   <script src="../script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      loadCategoryPosts("शेतकरी");
-      setInterval(() => loadCategoryPosts("शेतकरी"), 5 * 60 * 1000);
-    });
-  </script>
-</body>
-</html>
+  <script>document.addEventListener('DOMContentLoaded', ()=>{ loadCategoryPosts("शेतकरी"); setInterval(()=>loadCategoryPosts("शेतकरी"),5*60*1000); });</script>
+</body></html>
