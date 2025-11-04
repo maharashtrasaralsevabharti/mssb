@@ -45,18 +45,38 @@ async function loadPosts() {
 }
 
 function typingEffect() {
-  const text = "ऑनलाईन माहिती हक्काची फक्त महाराष्ट्र सरळ सेवा भरती वर उपलब्ध";
+ // Typing effect (fixed repeat bug)
+function typingEffect() {
   const elem = document.getElementById("typing-text");
+  if (!elem) return;
+
+  const text = "ऑनलाईन माहिती हक्काची फक्त महाराष्ट्र सरळ सेवा भरती वर उपलब्ध";
   let i = 0;
+  let deleting = false;
+
   function type() {
-    if (i < text.length) {
-      elem.textContent += text.charAt(i);
+    if (!deleting && i < text.length) {
+      elem.textContent = text.substring(0, i + 1);
       i++;
-      setTimeout(type, 75);
+    } else if (deleting && i > 0) {
+      elem.textContent = text.substring(0, i - 1);
+      i--;
     }
+
+    if (i === text.length) {
+      deleting = true;
+      setTimeout(type, 1200); // थोडा थांबा पूर्ण झाल्यावर
+      return;
+    } else if (i === 0 && deleting) {
+      deleting = false;
+    }
+
+    setTimeout(type, deleting ? 60 : 90);
   }
+
   type();
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   typingEffect();
