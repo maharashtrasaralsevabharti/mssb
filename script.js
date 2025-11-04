@@ -16,6 +16,27 @@ async function loadHighlights() {
     highlightBox.textContent = "⚠️ अपडेट मिळवण्यात त्रुटी आली.";
   }
 }
+// 🔁 Smooth scrolling ticker animation
+function startTickerScroll() {
+  const highlights = document.getElementById("highlights");
+  if (!highlights) return;
+  
+  highlights.style.whiteSpace = "nowrap";
+  highlights.style.overflow = "hidden";
+  highlights.style.display = "block";
+
+  let scrollAmount = 0;
+  setInterval(() => {
+    scrollAmount -= 1;
+    highlights.style.transform = `translateX(${scrollAmount}px)`;
+    if (Math.abs(scrollAmount) > highlights.scrollWidth) {
+      scrollAmount = window.innerWidth;
+    }
+  }, 25);
+}
+
+// Call after loading highlights
+setTimeout(startTickerScroll, 2000);
 
 async function loadPosts() {
   const container = document.getElementById("posts-container");
