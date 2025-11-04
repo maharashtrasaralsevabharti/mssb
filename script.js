@@ -78,12 +78,13 @@ function typingEffect() {
 }
 
 
+// ✅ Initial Load (prevent multiple calls)
+let hasLoaded = false;
 document.addEventListener("DOMContentLoaded", () => {
+  if (hasLoaded) return; // duplicate run stop
+  hasLoaded = true;
+  
   typingEffect();
-  loadHighlights();
   loadPosts();
-  setInterval(() => {
-    loadHighlights();
-    loadPosts();
-  }, 5 * 60 * 1000);
+  loadHighlights();
 });
