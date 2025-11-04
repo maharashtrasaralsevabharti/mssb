@@ -1,198 +1,250 @@
-body {
-  background: #f9f9f9;
-  font-family: "Noto Sans Devanagari", "Poppins", sans-serif;
-  color: #222;
-  line-height: 1.6;
-  transition: all 0.25s ease-in-out;
+/* -------------------------------------------------------
+   Maharashtra Saral Seva Bharti - Final Responsive Style
+   Author: GPT-5
+----------------------------------------------------------*/
+
+/* ✅ Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
 }
 
-/* 🔹 Header */
+body {
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ✅ Header */
 header {
   text-align: center;
-  padding: 10px;
+  padding: 20px 10px;
 }
 
-#typing-text {
-  color: #444;
-  font-weight: 500;
-  font-size: 1rem;
-  display: block;
-  margin-top: 4px;
+header img {
+  width: 100px;
+  border-radius: 20px;
 }
 
-/* 🔹 Highlights Bar */
-.highlight-bar {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  background: #fff6e9;
-  color: #222;
-  border-top: 3px solid #d33;
-  border-bottom: 1px solid #eee;
-  padding: 10px 14px;
-  font-weight: 500;
-  font-size: 1rem;
-  gap: 8px;
-  animation: fadeIn 0.8s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* 🔹 Latest Posts */
-#latest-posts {
-  margin: 25px auto;
-  text-align: center;
-  width: 95%;
-  max-width: 1100px;
-  animation: fadeUp 0.8s ease;
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.section-title {
-  font-size: 1.4rem;
-  color: #b30000;
+header h1 {
+  color: #c00;
+  font-size: 1.9rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-/* 🔹 Post Cards */
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  padding: 10px;
-}
-
-.post-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 14px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.post-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
-}
-
-.post-card img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.read-more {
-  display: inline-block;
   margin-top: 10px;
-  background: #d33;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.read-more:hover {
-  background: #a00;
 }
 
-/* Footer */
-footer {
-  background: #f3f3f3;
-  border-top: 2px solid #d33;
-  padding: 12px 0;
-  text-align: center;
-  color: #444;
-  font-size: 0.9rem;
-}
-/* Make all images auto-resize */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+header p {
+  font-size: 0.95rem;
+  color: #555;
 }
 
-/* Limit logo size */
-header img, .site-logo img {
-  max-width: 120px;
-}
-
-/* Post card layout */
-.post-card {
-  width: 100%;
-  max-width: 320px;
-  margin: 10px auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-.post-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Text center for cards */
-.post-card h3, .post-card p {
-  text-align: center;
-  margin: 10px;
-}
-
-/* Social icons responsive */
-.footer-social {
+/* ✅ Navbar */
+.navbar {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
   flex-wrap: wrap;
-}
-.footer-social img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-.footer-social img:hover {
-  transform: scale(1.15);
+  gap: 10px;
+  margin: 20px 0;
 }
 
-/* Responsive container */
-.container {
-  width: 90%;
+.navbar a {
+  text-decoration: none;
+  background: #f2f2f2;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.navbar a:hover,
+.navbar .active {
+  background: #d62828;
+  color: #fff;
+  border-color: #b71c1c;
+}
+
+/* ✅ Highlight Box */
+#highlights {
+  background: #fff3e0;
+  color: #333;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border-top: 3px solid #d62828;
+  border-bottom: 3px solid #d62828;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Section Title */
+.section-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #b71c1c;
+  margin-top: 25px;
+}
+
+/* ✅ Post Grid */
+#posts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-/* ✅ Responsive media queries */
+.post-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.post-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.post-card h3 {
+  padding: 10px 15px 5px 15px;
+  color: #c00;
+  font-size: 1rem;
+}
+
+.post-card p {
+  padding: 0 15px 10px 15px;
+  font-size: 0.9rem;
+  color: #555;
+  flex-grow: 1;
+}
+
+.read-more {
+  text-align: center;
+  display: block;
+  padding: 8px;
+  background: #d62828;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-top: 1px solid #c00;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: #b71c1c;
+}
+
+/* ✅ Footer */
+footer {
+  background: #f2f2f2;
+  padding: 20px 10px;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 2px solid #ddd;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #d62828;
+}
+
+/* ✅ Social Icons */
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  margin: 0 6px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 1024px) {
+  #posts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  header img {
+    width: 80px;
+  }
+
   header h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  #posts-container {
+    grid-template-columns: 1fr;
+    padding: 15px;
   }
 
-  .post-card {
-    max-width: 95%;
+  .navbar a {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  #highlights {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  .post-card img {
+    height: 160px;
   }
 
   footer {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ✅ Animation for Smooth Appear */
+.post-card {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: slideUp 0.6s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
