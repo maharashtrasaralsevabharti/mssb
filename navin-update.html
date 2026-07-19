@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नवीन अपडेट | महाराष्ट्र सरळ सेवा भरती</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- मुख्य CSS फाईल -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* नवीन अपडेट पेजसाठी खास स्टाईल */
+        .page-header { background: #d32f2f; color: white; padding: 20px; text-align: center; border-radius: 8px; margin-top: 15px; margin-bottom: 25px; }
+        .page-header h1 { font-size: 24px; margin: 0; }
+        
+        .update-list { display: flex; flex-direction: column; gap: 15px; }
+        
+        .update-item { background: #fff; border-left: 5px solid #d32f2f; border-radius: 5px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; transition: 0.3s; }
+        .update-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateX(5px); }
+        
+        .update-content { flex: 1; min-width: 250px; }
+        .update-content h3 { margin: 0 0 5px 0; color: #333; font-size: 18px; }
+        .update-content p { margin: 0; font-size: 14px; color: #555; }
+        
+        .update-date { background: #ffebee; color: #d32f2f; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 8px; display: inline-block; }
+        
+        .btn-read { background: #185baf; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-size: 14px; transition: 0.3s; white-space: nowrap; }
+        .btn-read:hover { background: #12407a; }
+        
+        /* मोबाईलसाठी डिझाईन */
+        @media screen and (max-width: 768px) {
+            .update-item { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .btn-read { width: 100%; text-align: center; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-section">
+            <img src="logo.png" alt="MSSB Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>महाराष्ट्र सरळ सेवा भरती</h1>
+            </div>
+        </div>
+        <div class="search-section">
+            <a href="index.html" class="btn btn-blue" style="text-decoration: none;"><i class="fas fa-home"></i> मुख्यपृष्ठ</a>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">मुख्यपृष्ठ</a></li>
+            <li><a href="nokar-bharti.html">नोकर भरती</a></li>
+            <li><a href="schemes.html">सरकारी योजना</a></li>
+            <li><a href="shetkari-yojana.html">शेतकरी योजना</a></li>
+            <li><a href="navin-update.html" class="active">नवीन अपडेट</a></li>
+            <li><a href="#">स्टडी मटेरियल PDF</a></li>
+            <li><a href="#">रिझल्ट</a></li>
+            <li><a href="#">ॲडमिट कार्ड</a></li>
+            <li><a href="#">संपर्क</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container" style="display: block;">
+        
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1><i class="fas fa-bell"></i> महत्त्वाचे नवीन अपडेट्स</h1>
+            <p style="margin-top: 5px; font-size: 14px;">भरती, निकाल आणि परीक्षांच्या तारखांची ताजी माहिती</p>
+        </div>
+
+        <!-- Updates List -->
+        <div class="update-list">
+            
+            <!-- Update 1 -->
+            <div class="update-item">
+                <div class="update-content">
+                    <span class="update-date">आजची बातमी (New)</span>
+                    <h3>महाराष्ट्र पोलीस भरती २०२६ ची जाहिरात लवकरच!</h3>
+                    <p>गृह विभागाकडून रिक्त पदांचा आढावा पूर्ण. मैदानी चाचणीचे नवीन नियम जाहीर होण्याची शक्यता.</p>
+                </div>
+                <a href="police-bharti.html" class="btn-read">सविस्तर पहा &rarr;</a>
+            </div>
+
+            <!-- Update 2 -->
+            <div class="update-item">
+                <div class="update-content">
+                    <span class="update-date">२ दिवस आधी</span>
+                    <h3>तलाठी भरती निकाल जाहीर</h3>
+                    <p>महसूल विभागाने तलाठी भरतीचा सुधारित निकाल अधिकृत वेबसाईटवर प्रसिद्ध केला आहे.</p>
+                </div>
+                <a href="#" class="btn-read">निकाल पहा &rarr;</a>
+            </div>
+
+            <!-- Update 3 -->
+            <div class="update-item">
+                <div class="update-content">
+                    <span class="update-date">मागील आठवडा</span>
+                    <h3>वनरक्षक भरती ॲडमिट कार्ड उपलब्ध</h3>
+                    <p>लेखी परीक्षेसाठी पात्र उमेदवारांचे प्रवेशपत्र (Hall Ticket) डाऊनलोड करण्यासाठी उपलब्ध झाले आहे.</p>
+                </div>
+                <a href="#" class="btn-read">डाऊनलोड करा &rarr;</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Maharashtra Saral Seva Bharti. सर्व हक्क राखीव.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
