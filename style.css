@@ -1,20 +1,125 @@
+/* बेसिक सेटिंग्ज */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans Devanagari',sans-serif;background:#f5f7fb;color:#222;line-height:1.6}
-.container{width:min(1100px,92%);margin:auto}
-.header{background:#0b5ed7;color:#fff;padding:16px 0;position:sticky;top:0}
-.header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;margin:0 10px;font-weight:600}
-.hero{background:linear-gradient(135deg,#0b5ed7,#4ea3ff);color:#fff;padding:70px 0;text-align:center}
-.hero h2{font-size:2.2rem;margin-bottom:15px}
-.hero p{max-width:700px;margin:0 auto 24px}
-.btn{display:inline-block;background:#fff;color:#0b5ed7;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:700}
-#latest{padding:50px 0}
-#posts-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.post-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
-footer{background:#111;color:#fff;text-align:center;padding:22px;margin-top:40px}
-@media(max-width:768px){
-.header .container{flex-direction:column;gap:10px}
-nav{display:flex;flex-wrap:wrap;justify-content:center}
-.hero h2{font-size:1.6rem}
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* हेडर डिझाईन */
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    float: left;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* क्लिअर फ्लोट (Header नीट दिसण्यासाठी) */
+header::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* मुख्य भाग (Main Content) */
+main {
+    padding: 40px 0;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0056b3;
+}
+
+/* जॉब ग्रिड (Cards) */
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.job-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.btn {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #218838;
+}
+
+/* फुटर */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 40px;
 }
