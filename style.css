@@ -23,6 +23,10 @@
 body {
     background-color: var(--bg-light);
     color: var(--text-dark);
+    /* खालील ३ ओळी नवीन ऍड करा */
+    -webkit-user-select: none; /* Safari साठी */
+    -ms-user-select: none; /* जुन्या ब्राउझरसाठी */
+    user-select: none; /* सर्वसाधारण ब्राउझरसाठी */
 }
 
 /* 1. Top Bar */
