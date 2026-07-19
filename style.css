@@ -169,10 +169,25 @@ body {
     padding: 15px; text-align: center; position: relative; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
-.job-img { width: 60%; height: 30px; object-fit: cover; border-radius: 4px; margin-bottom: 8px; }
+.job-img { 
+    width: 100%;           /* कार्डच्या पूर्ण रुंदीचा फोटो होईल */
+    height: 150px;         /* फोटोची उंची व्यवस्थित दिसेल */
+    object-fit: cover;     /* फोटो क्रॉप न होता पूर्ण बॉक्समध्ये फिट बसेल */
+    border-radius: 4px; 
+    margin-bottom: 8px; 
+    display: block;        /* हे गरजेचं आहे */
+}
+
 .badge { 
-    position: absolute; top: 10px; left: 10px; background: #d32f2f; 
-    color: white; padding: 3px 10px; border-radius: 4px; font-size: 12px; 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    background: #d32f2f; 
+    color: white; 
+    padding: 3px 10px; 
+    border-radius: 4px; 
+    font-size: 12px; 
+    z-index: 10;           /* फोटोच्या वर बॅज दिसावा म्हणून */
 }
 .posts { 
     background: #fff3e0; color: #e65100; padding: 5px 10px; 
