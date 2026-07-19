@@ -1,239 +1,29 @@
-/* 🎨 Brand Colors & Basic Setup */
-:root {
-    --primary-blue: #0D47A1;
-    --gold: #FFC107;
-    --bg-white: #FFFFFF;
-    --breaking-red: #E53935;
-    --text-dark: #333333;
-    --gray-bg: #f4f6f8;
-}
+:root { --primary-blue: #0D47A1; --gold: #FFC107; --breaking-red: #E53935; --gray-bg: #f4f4f4; }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-body {
-    background-color: var(--gray-bg);
-    color: var(--text-dark);
-}
+body { background-color: var(--gray-bg); font-size: 14px; } /* फॉन्ट साईझ कंट्रोल */
 
-/* 🔝 Header */
-.main-header {
-    background-color: var(--primary-blue);
-    color: var(--bg-white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+/* Header - साईझ कमी केली */
+.main-header { background: var(--primary-blue); color: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; }
+.logo img { height: 35px !important; } 
+.whatsapp-btn { padding: 5px 10px; font-size: 0.9rem; background: #25D366; color: white; border-radius: 4px; text-decoration: none; }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+/* Breaking News */
+.breaking-news { background: var(--breaking-red); color: white; padding: 5px 10px; font-size: 0.85rem; }
 
-.search-bar input {
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-}
+/* Slider */
+.hero-slider { background: white; margin: 10px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 5px; font-size: 0.95rem; }
 
-.menu-icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+/* Quick Access - बटणे लहान केली */
+.quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 10px; }
+.quick-item { background: white; padding: 10px; text-align: center; border-radius: 5px; font-size: 0.8rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
 
-.whatsapp-btn {
-    background-color: #25D366; 
-    color: white;
-    padding: 8px 12px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
+/* Cards - कार्डची साईझ कमी केली */
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 10px; }
+.card { background: white; padding: 15px; border-radius: 5px; text-align: center; font-size: 0.9rem; border-top: 3px solid var(--primary-blue); }
 
-/* 🔴 Breaking News */
-.breaking-news {
-    background-color: var(--breaking-red);
-    color: var(--bg-white);
-    display: flex;
-    padding: 10px;
-    font-weight: bold;
-}
+/* Social Icons */
+.social-links img { width: 30px; height: 30px; margin: 0 5px; }
 
-.breaking-label {
-    background-color: #b71c1c;
-    padding: 0 10px;
-    margin-right: 10px;
-    border-radius: 3px;
-    white-space: nowrap;
-}
-
-/* 🔥 Hero Slider Setup */
-.hero-slider {
-    background-color: var(--bg-white);
-    margin: 15px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-blue);
-    position: relative;
-    overflow: hidden;
-}
-
-.slide {
-    display: none;
-    width: 100%;
-    text-align: center;
-    animation: fade 0.8s ease-in-out;
-}
-
-.slide.active {
-    display: block;
-}
-
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
-/* ⚡ Quick Access */
-.quick-access {
-    margin: 20px 15px;
-}
-
-.quick-access h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.quick-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    text-align: center;
-}
-
-.quick-item {
-    background-color: var(--bg-white);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.quick-item:hover {
-    background-color: var(--primary-blue);
-    color: var(--bg-white);
-}
-
-/* General Section Setup */
-.section-container {
-    margin: 20px 15px;
-}
-
-.section-title {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--primary-blue);
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* Grids for Cards */
-.card-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-}
-
-.card-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-}
-
-.card {
-    background-color: var(--bg-white);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    font-weight: bold;
-}
-
-.blue-card { border-top: 4px solid var(--primary-blue); }
-.gold-card { border-top: 4px solid var(--gold); }
-.green-card { border-top: 4px solid #4CAF50; }
-
-/* ⭐ Trending */
-.trending ul {
-    list-style: none;
-    background: var(--bg-white);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.trending ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.trending ul li:last-child {
-    border-bottom: none;
-}
-
-/* 📲 Join Community */
-.join-community {
-    background-color: var(--gold);
-    text-align: center;
-    padding: 30px 15px;
-    margin-top: 30px;
-    color: #000;
-}
-
-.join-community h2 { margin-bottom: 10px; }
-.join-community p { margin-bottom: 20px; }
-
-.whatsapp-btn-large {
-    background-color: var(--primary-blue);
-    color: var(--bg-white);
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
-}
-
-/* 📄 Footer */
-footer {
-    background-color: var(--primary-blue);
-    color: var(--bg-white);
-    text-align: center;
-    padding: 15px;
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 600px) {
-    .quick-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .search-bar input {
-        width: 100px;
-    }
-}
+footer { text-align: center; padding: 15px; font-size: 0.8rem; background: #333; color: white; margin-top: 15px; }
