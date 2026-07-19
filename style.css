@@ -1,4 +1,13 @@
-/* बेसिक सेटिंग्ज */
+/* 🎨 Brand Colors (Final) & Basic Setup */
+:root {
+    --primary-blue: #0D47A1;
+    --gold: #FFC107;
+    --bg-white: #FFFFFF;
+    --breaking-red: #E53935;
+    --text-dark: #333333;
+    --gray-bg: #f4f6f8;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,119 +16,206 @@
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
+    background-color: var(--gray-bg);
+    color: var(--text-dark);
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
+/* 🔝 Header */
+.main-header {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* हेडर डिझाईन */
-header {
-    background: #0056b3;
-    color: #fff;
-    padding: 20px 0;
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-header h1 {
-    float: left;
+.search-bar input {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
 }
 
-header nav {
-    float: right;
-    margin-top: 10px;
+.menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-header nav ul {
-    list-style: none;
-}
-
-header nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
+.whatsapp-btn {
+    background-color: #25D366; /* Standard WhatsApp Green */
+    color: white;
+    padding: 8px 12px;
     text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
 }
 
-header nav ul li a:hover {
-    text-decoration: underline;
+/* 🔴 Breaking News */
+.breaking-news {
+    background-color: var(--breaking-red);
+    color: var(--bg-white);
+    display: flex;
+    padding: 10px;
+    font-weight: bold;
 }
 
-/* क्लिअर फ्लोट (Header नीट दिसण्यासाठी) */
-header::after {
-    content: '';
-    display: block;
-    clear: both;
+.breaking-label {
+    background-color: #b71c1c;
+    padding: 0 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    white-space: nowrap;
 }
 
-/* मुख्य भाग (Main Content) */
-main {
-    padding: 40px 0;
+/* 🔥 Hero Slider */
+.hero-slider {
+    background-color: var(--bg-white);
+    margin: 15px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-blue);
 }
 
-main h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #0056b3;
+/* ⚡ Quick Access */
+.quick-access {
+    margin: 20px 15px;
 }
 
-/* जॉब ग्रिड (Cards) */
-.job-grid {
+.quick-access h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.quick-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
 }
 
-.job-card {
-    background: #fff;
+.quick-item {
+    background-color: var(--bg-white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quick-item:hover {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+}
+
+/* General Section Setup */
+.section-container {
+    margin: 20px 15px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-blue);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Grids for Cards */
+.card-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.card-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background-color: var(--bg-white);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.job-card:hover {
-    transform: translateY(-5px);
-}
-
-.job-card h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.job-card p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
-}
-
-.btn {
-    display: inline-block;
-    background: #28a745;
-    color: #fff;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background: #218838;
-}
-
-/* फुटर */
-footer {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    margin-top: 40px;
+    font-weight: bold;
+}
+
+.blue-card { border-top: 4px solid var(--primary-blue); }
+.gold-card { border-top: 4px solid var(--gold); }
+.green-card { border-top: 4px solid #4CAF50; }
+
+/* ⭐ Trending */
+.trending ul {
+    list-style: none;
+    background: var(--bg-white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.trending ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.trending ul li:last-child {
+    border-bottom: none;
+}
+
+/* 📲 Join Community */
+.join-community {
+    background-color: var(--gold);
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 30px;
+    color: #000;
+}
+
+.join-community h2 { margin-bottom: 10px; }
+.join-community p { margin-bottom: 20px; }
+
+.whatsapp-btn-large {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* 📄 Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+    .quick-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .search-bar input {
+        width: 100px;
+    }
 }
