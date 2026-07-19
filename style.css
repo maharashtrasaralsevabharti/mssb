@@ -170,12 +170,13 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 .job-img { 
-    width: 100%;           /* कार्डच्या पूर्ण रुंदीचा फोटो होईल */
-    height: 150px;         /* फोटोची उंची व्यवस्थित दिसेल */
-    object-fit: cover;     /* फोटो क्रॉप न होता पूर्ण बॉक्समध्ये फिट बसेल */
-    border-radius: 4px; 
-    margin-bottom: 8px; 
-    display: block;        /* हे गरजेचं आहे */
+    width: 100%;           /* फोटो कार्डच्या पूर्ण रुंदीला व्यापेल */
+    height: 150px;         /* उंची वाढवली म्हणजे फोटो नीट दिसेल */
+    object-fit: contain;   /* 'cover' ऐवजी 'contain' वापरा, यामुळे फोटो पूर्ण दिसेल आणि क्रॉप होणार नाही */
+    background-color: #f8f9fa; /* फोटोच्या आजूबाजूला रिकामी जागा असेल तर तिथे हलका राखाडी रंग येईल */
+    border-radius: 5px; 
+    margin-bottom: 10px;
+    display: block;
 }
 
 .badge { 
