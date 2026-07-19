@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संपर्क | महाराष्ट्र सरळ सेवा भरती</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- मुख्य CSS फाईल -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* संपर्क पेजसाठी खास स्टाईल */
+        .page-header { background: #185baf; color: white; padding: 20px; text-align: center; border-radius: 8px; margin-top: 15px; margin-bottom: 25px; }
+        .page-header h1 { font-size: 24px; margin: 0; }
+        
+        .contact-container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .contact-info, .contact-form-box { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); flex: 1; min-width: 300px; }
+        
+        .contact-info h3 { color: #333; margin-bottom: 15px; font-size: 20px; }
+        .contact-info p { font-size: 15px; color: #555; margin-bottom: 15px; line-height: 1.6; }
+        
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: white; text-decoration: none; font-size: 20px; transition: 0.3s; }
+        .social-links .wa { background: #25D366; }
+        .social-links .tg { background: #0088cc; }
+        .social-links .yt { background: #FF0000; }
+        .social-links .em { background: #D44638; }
+        .social-links a:hover { transform: scale(1.1); }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-size: 14px; color: #333; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; font-family: inherit; }
+        .form-group textarea { resize: vertical; height: 100px; }
+        
+        .btn-submit { background: #185baf; color: white; padding: 12px 25px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn-submit:hover { background: #12407a; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-section">
+            <img src="logo.png" alt="MSSB Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>महाराष्ट्र सरळ सेवा भरती</h1>
+            </div>
+        </div>
+        <div class="search-section">
+            <a href="index.html" class="btn btn-blue" style="text-decoration: none;"><i class="fas fa-home"></i> मुख्यपृष्ठ</a>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">मुख्यपृष्ठ</a></li>
+            <li><a href="nokar-bharti.html">नोकर भरती</a></li>
+            <li><a href="schemes.html">सरकारी योजना</a></li>
+            <li><a href="shetkari-yojana.html">शेतकरी योजना</a></li>
+            <li><a href="navin-update.html">नवीन अपडेट</a></li>
+            <li><a href="study-material.html">स्टडी मटेरियल PDF</a></li>
+            <li><a href="result.html">रिझल्ट</a></li>
+            <li><a href="admit-card.html">ॲडमिट कार्ड</a></li>
+            <li><a href="contact.html" class="active">संपर्क</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container" style="display: block;">
+        
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1><i class="fas fa-envelope"></i> आमच्याशी संपर्क साधा</h1>
+            <p style="margin-top: 5px; font-size: 14px;">तुमचे प्रश्न, अभिप्राय किंवा जाहिरातीसाठी आम्हाला मेसेज करा</p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-container">
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3><i class="fas fa-headset"></i> संपर्क माहिती</h3>
+                <p>महाराष्ट्र सरळ सेवा भरती पोर्टलवर भेट दिल्याबद्दल धन्यवाद! जर तुम्हाला काही अडचण असेल, कोणत्याही भरतीबद्दल माहिती हवी असेल, किंवा आमच्या वेबसाईटवर जाहिरात द्यायची असेल, तर तुम्ही आमच्याशी संपर्क साधू शकता.</p>
+                <p><strong>ईमेल:</strong> contact@maharashtrasaralsevabharti.in</p>
+                
+                <h3 style="margin-top: 25px;"><i class="fas fa-users"></i> आमच्या सोशल मीडिया ग्रुप्सला जॉईन करा</h3>
+                <div class="social-links">
+                    <a href="https://whatsapp.com/channel/0029VbBjuDPC1FuEkx4hKW3K" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/saralsevabhartiexam" class="tg" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://youtube.com/@saralsevabhartiupdate" class="yt" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="maharashtrasaralsevabharti@gmail.com" class="em" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-box">
+                <h3><i class="fas fa-paper-plane"></i> आम्हाला मेसेज पाठवा</h3>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">तुमचे नाव</label>
+                        <input type="text" id="name" name="name" placeholder="तुमचे पूर्ण नाव टाका" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">ईमेल आयडी</label>
+                        <input type="email" id="email" name="email" placeholder="तुमचा ईमेल टाका" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">विषय</label>
+                        <input type="text" id="subject" name="subject" placeholder="उदा. जाहिरात, अडचण इ." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">तुमचा मेसेज</label>
+                        <textarea id="message" name="message" placeholder="तुमचा मेसेज येथे लिहा..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">मेसेज पाठवा <i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Maharashtra Saral Seva Bharti. सर्व हक्क राखीव.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
