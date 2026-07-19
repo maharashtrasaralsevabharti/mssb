@@ -3,71 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>महाराष्ट्र सरळसेवा भरती (MSSB) | अधिकृत पोर्टल</title>
+    <title>महाराष्ट्र सरळ सेवा भरती | अधिकृत पोर्टल</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="main-header">
-        <!-- लोगो -->
-        <div class="logo">
-            <a href="index.html"><img src="logo.png" alt="MSSB Logo" style="height: 45px;"></a>
+    <!-- 1. Top Bar -->
+    <div class="top-bar">
+        <div class="top-left">
+            <span class="trending"><i class="fas fa-fire"></i> Trending :</span> महाराष्ट्र सरळ सेवा परीक्षा 2026 अपडेट
         </div>
-        <div class="search-bar"><input type="text" placeholder="शोधा..."></div>
-        <div class="menu-icon">☰</div>
-        <a href="https://chat.whatsapp.com/तुमची-लिंक" target="_blank" class="whatsapp-btn">Join</a>
-    </header>
-
-    <div class="breaking-news">
-        <span class="breaking-label">ब्रेकिंग:</span>
-        <marquee>महाराष्ट्र पोलीस भरती २०२६ ची जाहिरात प्रसिद्ध! त्वरित अर्ज करा...</marquee>
+        <div class="top-right">
+            <span>Follow Us :</span>
+            <a href="#" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" style="color: #0088cc;"><i class="fab fa-telegram"></i></a>
+            <a href="#" style="color: #FF0000;"><i class="fab fa-youtube"></i></a>
+            <a href="#" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+        </div>
     </div>
 
-    <section class="hero-slider">
-        <div class="slide active">🔥 १. तलाठी भरती २०२६ ची जाहिरात लवकरच...</div>
-        <div class="slide">🔥 २. पोलीस भरती: मैदानी चाचणीचे वेळापत्रक</div>
-    </section>
+    <!-- 2. Main Header -->
+    <header class="main-header">
+        <div class="logo-section">
+            <!-- लोगोसाठी इमेज अपलोड करा (logo.png) -->
+            <img src="logo.png" alt="MSSB Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>महाराष्ट्र सरळ सेवा भरती</h1>
+                <p>आपला विश्वसनीय सरकारी नोकरी व योजना पोर्टल</p>
+            </div>
+        </div>
+        <div class="search-section">
+            <form class="search-box">
+                <input type="text" placeholder="शोधा... नोकरभरती, योजना, PDF...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </header>
 
-    <!-- Quick Access (लिंक्ससह) -->
-    <section class="quick-access">
-        <div class="quick-grid">
-            <a href="recruitment.html" class="quick-item">💼<br>भरती</a>
-            <a href="schemes.html" class="quick-item">💰<br>योजना</a>
-            <a href="study.html" class="quick-item">📚<br>Study</a>
-            <a href="admit-card.html" class="quick-item">📝<br>Admit</a>
-            <a href="result.html" class="quick-item">🏆<br>Result</a>
-            <a href="updates.html" class="quick-item">📢<br>Update</a>
+    <!-- 3. Navigation Menu -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> मुख्यपृष्ठ</a></li>
+            <li><a href="#">नोकर भरती <i class="fas fa-caret-down"></i></a></li>
+            <li><a href="#">सरकारी योजना</a></li>
+            <li><a href="#">शेतकरी योजना</a></li>
+            <li><a href="#">नवीन अपडेट</a></li>
+            <li><a href="#">स्टडी मटेरियल PDF</a></li>
+            <li><a href="#">रिझल्ट</a></li>
+            <li><a href="#">ॲडमिट कार्ड</a></li>
+            <li><a href="#">संपर्क</a></li>
+        </ul>
+    </nav>
+
+    <!-- 4. Breaking News -->
+    <div class="breaking-news">
+        <div class="breaking-label"><i class="fas fa-bolt"></i> BREAKING NEWS</div>
+        <marquee>
+            <span class="news-item"><i class="fas fa-circle"></i> वनरक्षक भरती 2026 अपडेट</span> |
+            <span class="news-item"><i class="fas fa-circle"></i> MPSC वेळापत्रक 2026 घोषित</span> |
+            <span class="news-item"><i class="fas fa-circle"></i> पोलीस भरती लवकरच</span>
+        </marquee>
+    </div>
+
+    <!-- 5. Hero Banner (Main Image Area) -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>महाराष्ट्रातील सर्व सरकारी भरती व योजना<br><span class="highlight">एकाच ठिकाणी !</span></h2>
+            <p>वेगवान अपडेट | अचूक माहिती | विश्वासार्ह वेबसाईट</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-blue">सर्व नोकर भरती पहा <i class="fas fa-arrow-right"></i></a>
+                <a href="#" class="btn btn-green">सरकारी योजना पहा <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
-    <!-- नवीन भरती -->
-    <section class="section-container">
-        <h2 class="section-title">🆕 नवीन भरती</h2>
-        <div class="card-grid">
-            <a href="job-details.html" class="card-link"><div class="card blue-card">तलाठी भरती २०२६</div></a>
-            <a href="job-details.html" class="card-link"><div class="card blue-card">आरोग्य विभाग भरती</div></a>
+    <!-- 6. Quick Category Icons -->
+    <section class="category-circles">
+        <div class="circle-box">
+            <div class="icon-bg blue-bg"><i class="fas fa-user-tie"></i></div>
+            <h3>नोकर भरती</h3><p>सर्व भरती अपडेट</p>
+        </div>
+        <div class="circle-box">
+            <div class="icon-bg red-bg"><i class="fas fa-landmark"></i></div>
+            <h3>सरकारी योजना</h3><p>सर्व योजना माहिती</p>
+        </div>
+        <div class="circle-box">
+            <div class="icon-bg green-bg"><i class="fas fa-tractor"></i></div>
+            <h3>शेतकरी योजना</h3><p>कृषी अपडेट</p>
+        </div>
+        <div class="circle-box">
+            <div class="icon-bg purple-bg"><i class="fas fa-book-open"></i></div>
+            <h3>स्टडी मटेरियल</h3><p>Study PDF</p>
+        </div>
+        <div class="circle-box">
+            <div class="icon-bg orange-bg"><i class="fas fa-id-card"></i></div>
+            <h3>ॲडमिट कार्ड</h3><p>डाउनलोड करा</p>
         </div>
     </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://t.me/tumche-channel"><img src="telegram.png" alt="Telegram"></a>
-            <a href="https://youtube.com/c/tumche-channel"><img src="youtube.png" alt="YouTube"></a>
-            <a href="https://instagram.com/tumche-page"><img src="instagram.png" alt="Instagram"></a>
+    <!-- 7. Main Content Area (Two Columns Layout) -->
+    <div class="main-container">
+        
+        <!-- Left Column (Main Content) -->
+        <div class="left-content">
+            
+            <!-- Jobs Section -->
+            <section class="content-block">
+                <div class="block-header">
+                    <h2><i class="fas fa-trophy"></i> महत्वाच्या भरती अपडेट</h2>
+                    <a href="#" class="view-all">View All &rarr;</a>
+                </div>
+                <div class="card-grid-3">
+                    <div class="job-card">
+                        <span class="badge red">लेटेस्ट</span>
+                        <!-- येथे जॉबशी संबंधित इमेज टाका (उदा. police.jpg) -->
+                        <div class="img-placeholder">Image</div> 
+                        <h3>महाराष्ट्र पोलीस भरती 2026</h3>
+                        <p class="vacancies">पदसंख्या : 12,000+</p>
+                        <p class="info">जाहिरात लवकरच</p>
+                        <a href="#" class="btn-full">सविस्तर माहिती &rarr;</a>
+                    </div>
+                    <div class="job-card">
+                        <span class="badge green">अपडेट</span>
+                        <div class="img-placeholder">Image</div>
+                        <h3>वनरक्षक भरती 2026</h3>
+                        <p class="vacancies">पदसंख्या : 2,500+</p>
+                        <p class="info">आढावा बैठक : 17 जुलै</p>
+                        <a href="#" class="btn-full">सविस्तर माहिती &rarr;</a>
+                    </div>
+                    <div class="job-card">
+                        <div class="img-placeholder">Image</div>
+                        <h3>MPSC राज्यसेवा परीक्षा 2026</h3>
+                        <p class="vacancies">पदसंख्या : 300+</p>
+                        <p class="info">वेळापत्रक घोषित</p>
+                        <a href="#" class="btn-full">सविस्तर माहिती &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest Updates (List Style) -->
+            <section class="content-block mt-20">
+                <div class="block-header dark">
+                    <h2><i class="fas fa-bell"></i> नवीन अपडेट (Latest Updates)</h2>
+                    <a href="#" class="view-all">View All &rarr;</a>
+                </div>
+                <div class="list-updates">
+                    <div class="list-item">
+                        <div class="list-img">Img</div>
+                        <div class="list-text">
+                            <h3>वनरक्षक भरती 2026 अपडेट: 17 जुलै रोजी उच्चस्तरीय आढावा बैठक <span class="badge red small">New</span></h3>
+                            <div class="meta">
+                                <span class="tag">नोकर भरती</span> <span><i class="far fa-clock"></i> 17 जुलै 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-img">Img</div>
+                        <div class="list-text">
+                            <h3>महाराष्ट्र सरळ सेवा परीक्षेचे संभाव्य वेळापत्रक 2026 <span class="badge red small">New</span></h3>
+                            <div class="meta">
+                                <span class="tag">MPSC Updates</span> <span><i class="far fa-clock"></i> 16 जुलै 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <p>&copy; 2026 महाराष्ट्र सरळसेवा भरती (MSSB). सर्व हक्क राखीव.</p>
+
+        <!-- Right Column (Sidebar) -->
+        <aside class="right-sidebar">
+            
+            <!-- Quick Links -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title"><i class="fas fa-link"></i> त्वरित लिंक</h3>
+                <ul class="quick-links-list">
+                    <li><a href="#"><i class="fas fa-edit"></i> ऑनलाईन अर्ज <span>&gt;</span></a></li>
+                    <li><a href="#"><i class="far fa-file-pdf"></i> जाहिरात PDF <span>&gt;</span></a></li>
+                    <li><a href="#"><i class="far fa-calendar-alt"></i> वेळापत्रक <span>&gt;</span></a></li>
+                    <li><a href="#"><i class="fas fa-list-ol"></i> महत्वाच्या तारखा <span>&gt;</span></a></li>
+                    <li><a href="#"><i class="fas fa-download"></i> पूर्व परीक्षा पेपर <span>&gt;</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Join Us -->
+            <div class="sidebar-widget text-center">
+                <h3 class="widget-title">आमच्याशी जोडा</h3>
+                <div class="social-big-btns">
+                    <a href="#" class="wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp Channel <br><small>Join करा</small></a>
+                    <a href="#" class="tg-btn"><i class="fab fa-telegram-plane"></i> Telegram Channel <br><small>Join करा</small></a>
+                </div>
+            </div>
+
+            <!-- Study Material -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title"><i class="fas fa-book"></i> स्टडी मटेरियल PDF</h3>
+                <ul class="pdf-list">
+                    <li><a href="#"><i class="fas fa-file-pdf text-red"></i> MPSC पूर्व परीक्षा प्रश्नपत्रिका PDF</a></li>
+                    <li><a href="#"><i class="fas fa-file-pdf text-red"></i> पोलीस भरती अभ्यास साहित्य</a></li>
+                    <li><a href="#"><i class="fas fa-file-pdf text-red"></i> चालू घडामोडी PDF</a></li>
+                </ul>
+            </div>
+
+        </aside>
+    </div>
+
+    <!-- 8. Footer -->
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Maharashtra Saral Seva Bharti. सर्व हक्क राखीव. | www.maharashtrasaralsevabharti.in</p>
+        </div>
     </footer>
 
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlides() {
-            slides.forEach(s => s.classList.remove('active'));
-            slideIndex = (slideIndex + 1) % slides.length;
-            slides[slideIndex].classList.add('active');
-            setTimeout(showSlides, 3000);
-        }
-        showSlides();
-    </script>
 </body>
 </html>
