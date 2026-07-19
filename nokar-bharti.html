@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सर्व नोकर भरती | महाराष्ट्र सरळ सेवा भरती</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- मुख्य CSS फाईल -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .page-header { background: var(--primary-blue); color: white; padding: 20px; text-align: center; border-radius: 8px; margin-top: 15px; margin-bottom: 25px; }
+        .page-header h1 { font-size: 24px; margin: 0; }
+        .job-category-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s; }
+        .job-category-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--primary-blue); }
+        .job-icon { font-size: 40px; color: #185baf; margin-bottom: 15px; }
+        .job-category-card h3 { color: #333; margin-bottom: 10px; font-size: 20px; }
+        .job-category-card p { font-size: 14px; color: #555; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-section">
+            <img src="logo.png" alt="MSSB Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>महाराष्ट्र सरळ सेवा भरती</h1>
+            </div>
+        </div>
+        <div class="search-section">
+            <a href="index.html" class="btn btn-blue" style="text-decoration: none;"><i class="fas fa-home"></i> मुख्यपृष्ठ</a>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">मुख्यपृष्ठ</a></li>
+            <li><a href="nokar-bharti.html" class="active">नोकर भरती</a></li>
+            <li><a href="schemes.html">सरकारी योजना</a></li>
+            <li><a href="#">संपर्क</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container" style="display: block;">
+        
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1><i class="fas fa-briefcase"></i> महाराष्ट्रातील सर्व नोकर भरती</h1>
+            <p style="margin-top: 5px; font-size: 14px;">तुम्हाला ज्या भरतीची माहिती हवी आहे, त्यावर क्लिक करा</p>
+        </div>
+
+        <!-- Job Categories Grid -->
+        <div class="card-grid-3">
+            
+            <!-- पोलीस भरती -->
+            <div class="job-category-card">
+                <i class="fas fa-shield-alt job-icon"></i>
+                <h3>पोलीस भरती 2026</h3>
+                <p>महाराष्ट्र पोलीस शिपाई, चालक आणि SRPF भरतीची संपूर्ण माहिती, अभ्यासक्रम आणि शारीरिक चाचणीचे निकष.</p>
+                <a href="police-bharti.html" class="btn-full btn-blue">माहिती पहा &rarr;</a>
+            </div>
+
+            <!-- तलाठी भरती -->
+            <div class="job-category-card">
+                <i class="fas fa-laptop-house job-icon"></i>
+                <h3>तलाठी भरती</h3>
+                <p>महसूल विभागातील तलाठी गट-क पदभरती. नवीन जाहिरात, आवश्यक कागदपत्रे आणि मागील वर्षाच्या प्रश्नपत्रिका.</p>
+                <a href="job-details.html" class="btn-full btn-blue">माहिती पहा &rarr;</a>
+            </div>
+
+            <!-- सरळ सेवा भरती -->
+            <div class="job-category-card">
+                <i class="fas fa-users-cog job-icon"></i>
+                <h3>इतर सरळ सेवा भरती</h3>
+                <p>ग्रामसेवक, आरोग्य सेवक, वनरक्षक आणि जिल्हा परिषद अंतर्गत येणाऱ्या सर्व गट-क आणि गट-ड पदांच्या भरती.</p>
+                <a href="#" class="btn-full btn-blue">माहिती पहा &rarr;</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Maharashtra Saral Seva Bharti. सर्व हक्क राखीव.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
