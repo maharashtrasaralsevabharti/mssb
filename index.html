@@ -26,7 +26,11 @@
 
     <!-- 🔥 Hero Slider -->
     <section class="hero-slider">
-        <div class="slide">🔥 Hero Slider (5 Auto Posts येथे दिसतील)</div>
+        <div class="slide active">🔥 १. तलाठी भरती २०२६ ची जाहिरात लवकरच...</div>
+        <div class="slide">🔥 २. पोलीस भरती: मैदानी चाचणीचे वेळापत्रक</div>
+        <div class="slide">🔥 ३. MPSC राज्यसेवा पूर्व परीक्षा हॉल तिकीट</div>
+        <div class="slide">🔥 ४. आरोग्य विभाग भरती: गट क आणि ड</div>
+        <div class="slide">🔥 ५. कृषी सेवक पदांसाठी नवीन अपडेट</div>
     </section>
 
     <!-- ⚡ Quick Access -->
@@ -94,5 +98,28 @@
         <p>&copy; 2026 महाराष्ट्र सरळसेवा भरती (MSSB). सर्व हक्क राखीव.</p>
     </footer>
 
+    <!-- JavaScript Code (For Slider & Menu) -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].classList.add('active');
+            setTimeout(showSlides, 3000); 
+        }
+        
+        if(slides.length > 0) {
+            showSlides();
+        }
+
+        const menuIcon = document.querySelector('.menu-icon');
+        menuIcon.addEventListener('click', () => {
+            alert('येथे तुमचा मेन्यू (Menu) उघडेल. आपण लवकरच डिझाईन करू!');
+        });
+    </script>
 </body>
 </html>
+
