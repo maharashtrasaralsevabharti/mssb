@@ -222,3 +222,23 @@ body {
     .highlight { font-size: 26px; }
     .top-bar { flex-direction: column; text-align: center; gap: 5px; }
 }
+/* मोबाईल स्क्रीनसाठी खास डिझाईन (Mobile View Fix) */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        white-space: normal; /* मेनू एकाच ओळीत राहण्याची अट काढली */
+    }
+    .main-nav ul {
+        flex-wrap: wrap; /* मेनू आपोआप खालच्या ओळीत येऊ द्या */
+        justify-content: center; 
+    }
+    .main-nav li {
+        flex: 1 1 auto; /* बटनांची साईज स्क्रीननुसार ॲडजस्ट होईल */
+    }
+    .main-nav a {
+        padding: 10px 8px; /* मोबाईलवर बटनांची साईज थोडी कमी केली */
+        font-size: 14px; 
+    }
+    .dropdown-content {
+        min-width: 100%; /* मोबाईलवर ड्रॉपडाऊनची रुंदी व्यवस्थित करण्यासाठी */
+    }
+}
