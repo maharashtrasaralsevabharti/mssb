@@ -3,63 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>जॉब अपडेट्स आणि माहिती</title>
+    <title>महाराष्ट्र सरळसेवा भरती (MSSB)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- हेडर आणि नेव्हिगेशन -->
-    <header>
-        <div class="container">
-            <h1>नोकरी अपडेट्स</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">मुख्य पृष्ठ</a></li>
-                    <li><a href="#">नवीन नोकर्‍या</a></li>
-                    <li><a href="#">निकाल (Results)</a></li>
-                    <li><a href="#">संपर्क</a></li>
-                </ul>
-            </nav>
+    <!-- 🔝 Header -->
+    <header class="main-header">
+        <div class="logo">MSSB Logo</div>
+        <div class="search-bar">
+            <input type="text" placeholder="शोधा...">
         </div>
+        <div class="menu-icon">☰</div>
+        <a href="#" class="whatsapp-btn">WhatsApp Join</a>
     </header>
 
-    <!-- मुख्य भाग (Job Posts) -->
-    <main class="container">
-        <h2>नवीनतम जॉब अपडेट्स</h2>
-        
-        <div class="job-grid">
-            <!-- जॉब कार्ड १ -->
-            <article class="job-card">
-                <h3>आयटी इंजिनिअर (IT Engineer)</h3>
-                <p><strong>शिक्षण:</strong> M.Sc (Computer Science) / B.E</p>
-                <p><strong>ठिकाण:</strong> पुणे</p>
-                <p><strong>शेवटची तारीख:</strong> ३० जुलै २०२६</p>
-                <a href="#" class="btn">अधिक वाचा</a>
-            </article>
+    <!-- 🔴 Breaking News -->
+    <div class="breaking-news">
+        <span class="breaking-label">Breaking:</span>
+        <marquee>महाराष्ट्र पोलीस भरती २०२६ ची जाहिरात प्रसिद्ध! त्वरित अर्ज करा...</marquee>
+    </div>
 
-            <!-- जॉब कार्ड २ -->
-            <article class="job-card">
-                <h3>बँक क्लार्क भरती २०२६</h3>
-                <p><strong>शिक्षण:</strong> कोणतीही पदवी</p>
-                <p><strong>ठिकाण:</strong> महाराष्ट्र</p>
-                <p><strong>शेवटची तारीख:</strong> १५ ऑगस्ट २०२६</p>
-                <a href="#" class="btn">अधिक वाचा</a>
-            </article>
-            
-            <!-- जॉब कार्ड ३ -->
-            <article class="job-card">
-                <h3>शासकीय लिपिक पदे</h3>
-                <p><strong>शिक्षण:</strong> १२ वी पास + टायपिंग</p>
-                <p><strong>ठिकाण:</strong> मुंबई</p>
-                <p><strong>शेवटची तारीख:</strong> १० ऑगस्ट २०२६</p>
-                <a href="#" class="btn">अधिक वाचा</a>
-            </article>
+    <!-- 🔥 Hero Slider -->
+    <section class="hero-slider">
+        <div class="slide">🔥 Hero Slider (5 Auto Posts येथे दिसतील)</div>
+    </section>
+
+    <!-- ⚡ Quick Access -->
+    <section class="quick-access">
+        <h2>⚡ Quick Access</h2>
+        <div class="quick-grid">
+            <div class="quick-item">💼<br>भरती</div>
+            <div class="quick-item">💰<br>योजना</div>
+            <div class="quick-item">📚<br>Study</div>
+            <div class="quick-item">📝<br>Admit</div>
+            <div class="quick-item">🏆<br>Result</div>
+            <div class="quick-item">📢<br>Update</div>
         </div>
-    </main>
+    </section>
 
-    <!-- फुटर -->
+    <!-- 🆕 नवीन भरती -->
+    <section class="section-container">
+        <h2 class="section-title">🆕 नवीन भरती</h2>
+        <div class="card-grid-3">
+            <div class="card blue-card">🟦 Card 1 (तलाठी भरती)</div>
+            <div class="card blue-card">🟦 Card 2 (आरोग्य विभाग)</div>
+            <div class="card blue-card">🟦 Card 3 (ZP भरती)</div>
+            <div class="card blue-card">🟦 Card 4 (कृषी विभाग)</div>
+            <div class="card blue-card">🟦 Card 5 (वनरक्षक)</div>
+            <div class="card blue-card">🟦 Card 6 (महानगरपालिका)</div>
+        </div>
+    </section>
+
+    <!-- 💰 सरकारी योजना -->
+    <section class="section-container">
+        <h2 class="section-title">💰 सरकारी योजना</h2>
+        <div class="card-grid-2">
+            <div class="card gold-card">🟨 Card 1 (लाडकी बहीण योजना)</div>
+            <div class="card gold-card">🟨 Card 2 (शेतकरी सन्मान निधी)</div>
+        </div>
+    </section>
+
+    <!-- 📚 Study Material -->
+    <section class="section-container">
+        <h2 class="section-title">📚 Study Material</h2>
+        <div class="card-grid-2">
+            <div class="card green-card">🟩 Card 1 (मागील वर्षाच्या प्रश्नपत्रिका)</div>
+            <div class="card green-card">🟩 Card 2 (चालू घडामोडी)</div>
+        </div>
+    </section>
+
+    <!-- ⭐ Trending -->
+    <section class="section-container trending">
+        <h2 class="section-title">⭐ Trending</h2>
+        <ul>
+            <li>✨ MPSC राज्यसेवा पूर्व परीक्षा हॉल तिकीट</li>
+            <li>✨ ग्रामसेवक भरती निकाल जाहीर</li>
+        </ul>
+    </section>
+
+    <!-- 📲 Join Community -->
+    <section class="join-community">
+        <h2>📲 आमच्या कम्युनिटीमध्ये सामील व्हा</h2>
+        <p>नवीनतम अपडेट्स थेट तुमच्या मोबाईलवर मिळवा.</p>
+        <a href="#" class="whatsapp-btn-large">Join Telegram / WhatsApp</a>
+    </section>
+
+    <!-- 📄 Footer -->
     <footer>
-        <p>&copy; 2026 नोकरी अपडेट्स. सर्व हक्क राखीव.</p>
+        <p>&copy; 2026 महाराष्ट्र सरळसेवा भरती (MSSB). सर्व हक्क राखीव.</p>
     </footer>
 
 </body>
