@@ -37,7 +37,40 @@
     </style>
 </head>
 <body>
+<script>
+    // तुमचा अलर्ट मेसेज
+    var warningMsg = "ही माहिती कॉपी करण्यास मनाई आहे! (Copying is prohibited)";
 
+    // १. राईट-क्लिक (Right Click) बंद करणे आणि मेसेज दाखवणे
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+        alert(warningMsg);
+    });
+
+    // २. कीबोर्ड शॉर्टकट्स (Ctrl+C, Ctrl+U, F12) ब्लॉक करणे आणि मेसेज दाखवणे
+    document.onkeydown = function(e) {
+        if(e.keyCode == 123) { // F12 (Inspect Element) ब्लॉक
+            alert(warningMsg);
+            return false; 
+        } 
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { // Ctrl+Shift+I ब्लॉक
+            alert(warningMsg);
+            return false; 
+        } 
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { // Ctrl+U (View Source) ब्लॉक
+            alert(warningMsg);
+            return false; 
+        } 
+        if(e.ctrlKey && e.keyCode == 'C'.charCodeAt(0)) { // Ctrl+C (Copy) ब्लॉक
+            alert(warningMsg);
+            return false; 
+        } 
+        if(e.ctrlKey && e.keyCode == 'P'.charCodeAt(0)) { // Ctrl+P (Print) ब्लॉक
+            alert(warningMsg);
+            return false; 
+        }
+    }
+</script>
     <!-- Header -->
     <header class="main-header">
         <div class="logo-section">
